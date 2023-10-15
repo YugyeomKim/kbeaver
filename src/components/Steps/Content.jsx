@@ -94,6 +94,135 @@ const Comment = styled.div`
   }
 `;
 
+const StyledRow = styled.div`
+  display: flex;
+  width: 828px;
+  align-items: flex-start;
+  gap: 12px;
+`;
+
+const Product = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+`;
+
+const BuildingImg = styled.div`
+  display: flex;
+  width: 408px;
+  height: 280px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px 12px 0px 0px;
+  border-top: 1px solid #ccc9c5;
+  border-right: 1px solid #ccc9c5;
+  border-left: 1px solid #ccc9c5;
+
+  & .building-image {
+    width: 409px;
+    height: 305px;
+    flex-shrink: 0;
+    background: url(https://github.com/Syncathon-SYEC/K-Beaver/blob/main/public/image%2016.png),
+      lightgray 50% / cover no-repeat;
+  }
+`;
+
+const BuildingDetail = styled.div`
+  display: flex;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0px 0px 12px 12px;
+  border: 1px solid #ccc9c5;
+`;
+
+const BuildingInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+
+  & .name {
+    color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+    font-family: Pretendard;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 155.556% */
+  }
+
+  & .detail {
+    color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+    /* label / l3-M */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+  }
+
+  & .text {
+    color: #17130e;
+    font-family: var(--label-l3-m-font-family);
+    font-size: var(--label-l3-m-font-size);
+    font-style: var(--label-l3-m-font-style);
+    font-weight: var(--label-l3-m-font-weight);
+    letter-spacing: var(--label-l3-m-letter-spacing);
+    line-height: var(--label-l3-m-line-height);
+  }
+
+  & .splitter {
+    color: #e5e2de;
+    font-family: var(--label-l3-m-font-family);
+    font-size: var(--label-l3-m-font-size);
+    font-style: var(--label-l3-m-font-style);
+    font-weight: var(--label-l3-m-font-weight);
+    letter-spacing: var(--label-l3-m-letter-spacing);
+    line-height: var(--label-l3-m-line-height);
+  }
+`;
+
+const Button = styled.div`
+  display: flex;
+  padding: 8px 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border-radius: 8px;
+  background: var(--material-theme-key-colors-primary, #ffb261);
+
+  & .inquiry-button {
+    all: unset;
+    align-items: flex-start;
+    background-color: var(--material-themekey-colorsprimary);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    position: relative;
+  }
+
+  & .inquiry-label {
+    color: var(--material-themerefneutralneutral6);
+    font-family: var(--label-l3-m-font-family);
+    font-size: var(--label-l3-m-font-size);
+    font-style: var(--label-l3-m-font-style);
+    font-weight: var(--label-l3-m-font-weight);
+    letter-spacing: var(--label-l3-m-letter-spacing);
+    line-height: var(--label-l3-m-line-height);
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+`;
+
 export const Content = () => {
   return (
     <StyledContent className="content">
@@ -106,7 +235,6 @@ export const Content = () => {
           문의글은 비버가 수집한 정보를 바탕으로 자동 생성해 줄게요.
         </p>
       </Title>
-
       <Beaver>
         <Profile>
           <img className="beaver" alt="beaver" src="beaver.png" />
@@ -121,6 +249,63 @@ export const Content = () => {
           </p>
         </Comment>
       </Beaver>
+
+      <StyledRow>
+        <Product>
+          <BuildingImg>
+            <img
+              className="building-image "
+              alt="Building"
+              src="image 16.png"
+            />
+          </BuildingImg>
+
+          <BuildingDetail>
+            <BuildingInfo>
+              <div className="name">전세 1억 5,000만</div>
+              <p className="detail">
+                <span className="text">봉전동 1522-3 3층 </span>
+                <span className="splitter">|</span>
+                <span className="text"> 단독주택</span>
+              </p>
+            </BuildingInfo>
+
+            <Button>
+              <button className="inquiry-button">
+                <div className="inquiry-label">문의하기</div>
+              </button>
+            </Button>
+          </BuildingDetail>
+        </Product>
+
+        <Product>
+          <BuildingImg>
+            <img
+              className="building-image "
+              alt="Building"
+              src="image 17.png"
+            />
+          </BuildingImg>
+
+          <BuildingDetail>
+            <BuildingInfo>
+              <div className="name">전세 1억 6,000만</div>
+
+              <p className="detail">
+                <span className="text">봉천동 1563-12 중간층 </span>
+                <span className="splitter">|</span>
+                <span className="text"> 단독주택</span>
+              </p>
+            </BuildingInfo>
+
+            <Button>
+              <button className="inquiry-button">
+                <div className="inquiry-label">문의하기</div>
+              </button>
+            </Button>
+          </BuildingDetail>
+        </Product>
+      </StyledRow>
     </StyledContent>
   );
 };
