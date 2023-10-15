@@ -2,39 +2,30 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  align-items: flex-start;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-color: #d9d6d2;
   display: flex;
+  padding-bottom: 0px;
   flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
-  padding: 0px 0px 40px;
-  position: relative;
+  align-self: stretch;
+  border-bottom: 1px solid #d9d6d2;
 
   & .sub-title {
-    color: var(--material-themerefneutralneutral4);
-    font-family: "Pretendard-SemiBold", Helvetica;
+    color: var(--material-theme-ref-neutral-neutral-4, #120d09);
+    font-family: Pretendard;
     font-size: 26px;
+    font-style: normal;
     font-weight: 600;
-    letter-spacing: 0;
-    line-height: 40px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    line-height: 40px; /* 153.846% */
   }
 
   & .title {
-    color: var(--material-themerefneutralneutral4);
-    font-family: "Pretendard-Bold", Helvetica;
+    color: var(--material-theme-ref-neutral-neutral-4, #120d09);
+    font-family: Pretendard;
     font-size: 48px;
+    font-style: normal;
     font-weight: 700;
-    letter-spacing: 0;
-    line-height: 60px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    line-height: 60px; /* 125% */
   }
 `;
 

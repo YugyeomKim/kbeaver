@@ -4,30 +4,25 @@ import { TitleWrapper } from "./TitleWrapper";
 import styled from "styled-components";
 
 const StyledPlan = styled.div`
-  align-items: flex-start;
-  background-color: #ffffff;
   display: inline-flex;
-  gap: 10px;
-  min-height: 2586px;
-  min-width: 1000px;
   padding: 100px 64px;
-  position: relative;
-  width: 100%;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
 
-  & .div-2 {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
+  & .plan {
+    display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 54px;
-    position: relative;
   }
 `;
 
 const Plan = () => {
   return (
     <StyledPlan>
-      <div className="div-2">
+      <div className="plan">
         <TitleWrapper />
         <ContentWrapper />
       </div>

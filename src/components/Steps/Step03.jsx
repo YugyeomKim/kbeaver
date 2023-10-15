@@ -2,49 +2,50 @@ import { Content } from "./Content";
 import styled from "styled-components";
 
 const StyledStep = styled.div`
+  display: flex;
   align-items: flex-start;
-  display: inline-flex;
   gap: 20px;
-  position: relative;
+`;
 
-  & .timeline {
-    align-items: center;
-    align-self: stretch;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    padding: 4px 0px 0px;
-    position: relative;
-  }
+const Timeline = styled.div`
+  display: flex;
+  padding-top: 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: -4px;
+  align-self: stretch;
 
   & .head {
-    border: 4px solid;
-    border-color: var(--material-themekey-colorsprimary);
-    border-radius: 12px;
-    height: 24px;
-    position: relative;
+    stroke-width: 4px;
+    stroke: var(--material-theme-key-colors-primary, #ffb261);
     width: 24px;
-    z-index: 1;
+    height: 24px;
   }
 
   & .trail {
-    background-color: #d9d6d2;
-    flex: 1;
-    flex-grow: 1;
-    margin-top: -4px;
-    position: relative;
     width: 2px;
-    z-index: 0;
+    flex: 1 0 0;
+    background: #d9d6d2;
   }
 `;
 
 export const Step03 = () => {
   return (
     <StyledStep>
-      <div className="timeline">
-        <div className="head" />
+      <Timeline>
+        <div className="head">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle cx="12" cy="12" r="10" stroke="#FFB261" stroke-width="4" />
+          </svg>
+        </div>
         <div className="trail" />
-      </div>
+      </Timeline>
       <Content />
     </StyledStep>
   );

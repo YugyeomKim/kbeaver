@@ -4,20 +4,19 @@ import { Step01 } from "./Steps/Step01";
 import { Step02 } from "./Steps/Step02";
 import { Step03 } from "./Steps/Step03";
 
-const StyledStepWrapperScreen = styled.div`
-  align-items: flex-start;
-  display: inline-flex;
+const StepsWrapper = styled.div`
+  display: flex;
   flex-direction: column;
-  position: relative;
+  align-items: flex-start;
+  gap: -8px;
 `;
 
 export const StepWrapper = () => {
   return (
-    <StyledStepWrapperScreen>
-      <div>step</div>
+    <StepsWrapper>
       <Step01 />
       <Step02 />
       <Step03 />
-    </StyledStepWrapperScreen>
+    </StepsWrapper>
   );
 };

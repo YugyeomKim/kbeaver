@@ -1,131 +1,39 @@
 import styled from "styled-components";
 
 const StyledStep = styled.div`
+  display: flex;
   align-items: flex-start;
-  display: inline-flex;
   gap: 20px;
-  position: relative;
+`;
 
-  & .timeline {
-    align-items: center;
-    align-self: stretch;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    padding: 4px 0px 0px;
-    position: relative;
+const Timeline = styled.div`
+  display: flex;
+  padding-top: 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: -4px;
+  align-self: stretch;
 
-    & .head {
-      border: 4px solid;
-      border-color: var(--material-themekey-colorsprimary);
-      border-radius: 12px;
-      height: 24px;
-      position: relative;
-      width: 24px;
-      z-index: 1;
-    }
-
-    & .trail {
-      background-color: #d9d6d2;
-      flex: 1;
-      flex-grow: 1;
-      margin-top: -4px;
-      position: relative;
-      width: 2px;
-      z-index: 0;
-    }
+  & .head {
+    stroke-width: 4px;
+    stroke: var(--material-theme-key-colors-primary, #ffb261);
+    width: 24px;
+    height: 24px;
   }
 
-  & .content {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 48px;
-    padding: 0px 0px 108px;
-    position: relative;
-
-    & .design-component-instance-node {
-      flex: 0 0 auto !important;
-    }
-
-    & .suggestion {
-      align-items: flex-start;
-      display: inline-flex;
-      flex: 0 0 auto;
-      flex-direction: column;
-      gap: 24px;
-      position: relative;
-
-      & .products {
-        align-items: flex-start;
-        display: flex;
-        flex: 0 0 auto;
-        gap: 12px;
-        position: relative;
-        width: 828px;
-
-        & .product {
-          align-items: center;
-          border: 1px solid;
-          border-color: #ccc9c5;
-          border-radius: 12px;
-          display: flex;
-          flex: 1;
-          flex-grow: 1;
-          justify-content: space-between;
-          padding: 16px 20px;
-          position: relative;
-
-          & .information {
-            align-items: flex-start;
-            display: inline-flex;
-            flex: 0 0 auto;
-            flex-direction: column;
-            position: relative;
-
-            & .bank-name {
-              color: var(--material-themerefneutralneutral6);
-              font-family: var(--label-l3-SB-font-family);
-              font-size: var(--label-l3-SB-font-size);
-              font-style: var(--label-l3-SB-font-style);
-              font-weight: var(--label-l3-SB-font-weight);
-              letter-spacing: var(--label-l3-SB-letter-spacing);
-              line-height: var(--label-l3-SB-line-height);
-              margin-top: -1px;
-              position: relative;
-              white-space: nowrap;
-              width: fit-content;
-            }
-
-            & .product-name {
-              color: var(--material-themerefneutralneutral6);
-              font-family: var(--label-l3-m-font-family);
-              font-size: var(--label-l3-m-font-size);
-              font-style: var(--label-l3-m-font-style);
-              font-weight: var(--label-l3-m-font-weight);
-              letter-spacing: var(--label-l3-m-letter-spacing);
-              line-height: var(--label-l3-m-line-height);
-              position: relative;
-              white-space: nowrap;
-              width: fit-content;
-            }
-          }
-
-          & .arrow-forward-ios {
-            height: 20px;
-            position: relative;
-            width: 20px;
-          }
-        }
-      }
-    }
+  & .trail {
+    width: 2px;
+    flex: 1 0 0;
+    background: #d9d6d2;
   }
 `;
 
 const Title = styled.div`
-  height: 32px;
-  width: 299px;
+  display: flex;
+  width: 828px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 
   & .title {
     color: var(--material-themerefneutralneutral6);
@@ -138,11 +46,6 @@ const Title = styled.div`
     top: 0;
     white-space: nowrap;
   }
-`;
-
-const Description = styled.div`
-  height: 72px;
-  width: 828px;
 
   & .description {
     color: var(--material-themerefneutralneutral6);
@@ -157,29 +60,45 @@ const Description = styled.div`
   }
 `;
 
-const Profile = styled.div`
-  align-items: center;
-  display: inline-flex;
+const Content = styled.div`
+  display: flex;
+  padding-bottom: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+`;
+
+const Beaver = styled.div`
+  display: flex;
+  width: 828px;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
-  position: relative;
+`;
+
+const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   & .beaver {
-    height: 32px;
-    position: relative;
+    display: flex;
     width: 32px;
+    height: 32px;
+    padding: 6px 4px 6px 5px;
+    justify-content: center;
+    align-items: center;
   }
 
   & .bot-name {
-    color: var(--material-themerefneutralneutral6);
-    font-family: var(--label-l3-SB-font-family);
-    font-size: var(--label-l3-SB-font-size);
-    font-style: var(--label-l3-SB-font-style);
-    font-weight: var(--label-l3-SB-font-weight);
-    letter-spacing: var(--label-l3-SB-letter-spacing);
-    line-height: var(--label-l3-SB-line-height);
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+    /* label / l3-SB */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
   }
 `;
 
@@ -194,6 +113,7 @@ const Comment = styled.div`
   background: var(--material-theme-ref-secondary-secondary-96, #fff1e7);
 
   & .comment {
+    align-self: stretch;
     color: var(--material-theme-ref-neutral-neutral-6, #17130e);
 
     /* label / l3-M */
@@ -205,18 +125,84 @@ const Comment = styled.div`
   }
 `;
 
+const Suggestion = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+`;
+
+const Products = styled.div`
+  display: flex;
+  width: 828px;
+  align-items: flex-start;
+  gap: 12px;
+`;
+
+const Product = styled.div`
+  display: flex;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 12px;
+  border: 1px solid #ccc9c5;
+
+  & .information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & .bank-name {
+      color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+      /* label / l3-SB */
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+    }
+
+    & .product-name {
+      color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+      /* label / l3-M */
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px; /* 150% */
+    }
+  }
+
+  & .arrow-forward-ios {
+    height: 20px;
+    width: 20px;
+  }
+`;
+
 export const Step01 = () => {
   return (
     <StyledStep>
-      <div className="timeline">
-        <div className="head" />
+      <Timeline>
+        <div className="head">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle cx="12" cy="12" r="10" stroke="#FFB261" stroke-width="4" />
+          </svg>
+        </div>
         <div className="trail" />
-      </div>
-      <div className="content">
+      </Timeline>
+
+      <Content>
         <Title>
           <p className="title">STEP 1. 내 자산과 대출 상품 파악하기</p>
-        </Title>
-        <Description>
           <p className="description">
             집을 마련할 때는 먼저 얼마나 많은 돈을 쓸 수 있는지 계산해봐야 해요.
             그 다음으로는 어떤 종류의 집(아파트, 빌라, 다가구집, 원룸, 오피스텔
@@ -225,25 +211,30 @@ export const Step01 = () => {
             받아보세요. &#39;얼마나 대출받을 수 있는지&#39;와 &#39;이자는 얼마나
             나오는지&#39;를 반드시 확인해야 해요.
           </p>
-        </Description>
-        <div className="suggestion">
-          <Profile>
-            <img className="beaver" alt="beaver" src="beaver.png" />
-            <div className="bot-name">비버’s comment</div>
-          </Profile>
-          <Comment>
-            <p className="comment">
-              사용자 님의 답변을 분석한 결과, 사용자 님은 자산은 ~ 규모이고 ~
-              아래에 사용자 님이 관심가질만한 대출 상품을
-              가져왔어요.&nbsp;&nbsp;
-              <br />
-              &lt;- 여기 들어갈 내용은 금융상품 추천 질문 완성되면
-              추가하겠습니다. 전체적인 컨셉은 ‘금융상품 추천 관련 질문’ 에서
-              받았던 답변을 요약해주는 것 입니다.
-            </p>
-          </Comment>
-          <div className="products">
-            <div className="product">
+        </Title>
+
+        <Suggestion>
+          <Beaver>
+            <Profile>
+              <img className="beaver" alt="beaver" src="beaver.png" />
+              <div className="bot-name">비버’s comment</div>
+            </Profile>
+
+            <Comment>
+              <p className="comment">
+                사용자 님의 답변을 분석한 결과, 사용자 님은 자산은 ~ 규모이고 ~
+                아래에 사용자 님이 관심가질만한 대출 상품을
+                가져왔어요.&nbsp;&nbsp;
+                <br />
+                &lt;- 여기 들어갈 내용은 금융상품 추천 질문 완성되면
+                추가하겠습니다. 전체적인 컨셉은 ‘금융상품 추천 관련 질문’ 에서
+                받았던 답변을 요약해주는 것 입니다.
+              </p>
+            </Comment>
+          </Beaver>
+
+          <Products>
+            <Product>
               <div className="information">
                 <div className="bank-name">KB국민은행</div>
                 <div className="product-name">퍼스트홈론</div>
@@ -253,8 +244,9 @@ export const Step01 = () => {
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
               />
-            </div>
-            <div className="product">
+            </Product>
+
+            <Product>
               <div className="information">
                 <div className="bank-name">NH농협은행</div>
                 <div className="product-name">홈드림모기지론</div>
@@ -264,8 +256,9 @@ export const Step01 = () => {
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
               />
-            </div>
-            <div className="product">
+            </Product>
+
+            <Product>
               <div className="information">
                 <div className="bank-name">교보생명</div>
                 <div className="product-name">교보e아파트론</div>
@@ -275,10 +268,10 @@ export const Step01 = () => {
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
               />
-            </div>
-          </div>
-        </div>
-      </div>
+            </Product>
+          </Products>
+        </Suggestion>
+      </Content>
     </StyledStep>
   );
 };

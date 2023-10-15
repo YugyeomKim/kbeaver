@@ -1,114 +1,39 @@
 import styled from "styled-components";
 
 const StyledStep = styled.div`
+  display: flex;
   align-items: flex-start;
-  display: inline-flex;
   gap: 20px;
-  position: relative;
+`;
 
-  & .timeline {
-    align-items: center;
-    align-self: stretch;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    padding: 4px 0px 0px;
-    position: relative;
-  }
+const Timeline = styled.div`
+  display: flex;
+  padding-top: 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: -4px;
+  align-self: stretch;
 
   & .head {
-    border: 4px solid;
-    border-color: var(--material-themekey-colorsprimary);
-    border-radius: 12px;
-    height: 24px;
-    position: relative;
+    stroke-width: 4px;
+    stroke: var(--material-theme-key-colors-primary, #ffb261);
     width: 24px;
-    z-index: 1;
+    height: 24px;
   }
 
   & .trail {
-    background-color: #d9d6d2;
-    flex: 1;
-    flex-grow: 1;
-    margin-top: -4px;
-    position: relative;
     width: 2px;
-    z-index: 0;
-  }
-
-  & .content {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 48px;
-    padding: 0px 0px 108px;
-    position: relative;
-  }
-
-  & .design-component-instance-node {
-    flex: 0 0 auto !important;
-  }
-
-  & .suggestion {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 24px;
-    position: relative;
-  }
-
-  & .keywords-container {
-    align-items: center;
-    border: 1px solid;
-    border-color: #ccc9c5;
-    border-radius: 12px;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 12px;
-    justify-content: center;
-    padding: 40px 20px;
-    position: relative;
-    width: 828px;
-  }
-
-  & .keyword-wrapper {
-    align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 12px;
-    justify-content: center;
-    position: relative;
-  }
-
-  & .keyword {
-    align-items: flex-start;
-    background-color: var(--material-themekey-colorsprimary);
-    border-radius: 12px;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 2px;
-    padding: 16px 20px;
-    position: relative;
-  }
-
-  & .label {
-    display: flex;
-    padding: 16px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    border-radius: 12px;
-    background: var(--material-theme-key-colors-primary, #ffb261);
+    flex: 1 0 0;
+    background: #d9d6d2;
   }
 `;
 
 const Title = styled.div`
-  height: 32px;
-  width: 381px;
+  display: flex;
+  width: 828px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 
   & .title {
     color: var(--material-themerefneutralneutral6);
@@ -121,11 +46,6 @@ const Title = styled.div`
     top: 0;
     white-space: nowrap;
   }
-`;
-
-const Description = styled.div`
-  height: 72px;
-  width: 828px;
 
   & .description {
     color: var(--material-themerefneutralneutral6);
@@ -140,29 +60,92 @@ const Description = styled.div`
   }
 `;
 
-const Profile = styled.div`
+const Content = styled.div`
+  display: flex;
+  padding-bottom: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+`;
+
+const Suggestion = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+`;
+
+const KeywordsContainer = styled.div`
+  display: flex;
+  width: 828px;
+  padding: 40px 20px;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  display: inline-flex;
   gap: 12px;
-  position: relative;
+  border-radius: 12px;
+  border: 1px solid #ccc9c5;
+
+  & .keyword-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  & .keyword {
+    display: flex;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    border-radius: 12px;
+    background: var(--material-theme-key-colors-primary, #ffb261);
+  }
+
+  & .label {
+    color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+    /* label / l3-SB */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+  }
+`;
+
+const Beaver = styled.div`
+  display: flex;
+  width: 828px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+`;
+
+const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   & .beaver {
-    height: 32px;
-    position: relative;
+    display: flex;
     width: 32px;
+    height: 32px;
+    padding: 6px 4px 6px 5px;
+    justify-content: center;
+    align-items: center;
   }
 
   & .bot-name {
-    color: var(--material-themerefneutralneutral6);
-    font-family: var(--label-l3-SB-font-family);
-    font-size: var(--label-l3-SB-font-size);
-    font-style: var(--label-l3-SB-font-style);
-    font-weight: var(--label-l3-SB-font-weight);
-    letter-spacing: var(--label-l3-SB-letter-spacing);
-    line-height: var(--label-l3-SB-line-height);
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+    /* label / l3-SB */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
   }
 `;
 
@@ -177,6 +160,7 @@ const Comment = styled.div`
   background: var(--material-theme-ref-secondary-secondary-96, #fff1e7);
 
   & .comment {
+    align-self: stretch;
     color: var(--material-theme-ref-neutral-neutral-6, #17130e);
 
     /* label / l3-M */
@@ -191,43 +175,57 @@ const Comment = styled.div`
 export const Step02 = () => {
   return (
     <StyledStep>
-      <div className="timeline">
-        <div className="head" />
+      <Timeline>
+        <div className="head">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle cx="12" cy="12" r="10" stroke="#FFB261" stroke-width="4" />
+          </svg>
+        </div>
         <div className="trail" />
-      </div>
-      <div className="content">
+      </Timeline>
+
+      <Content>
         <Title>
           <p className="title">
             STEP 2. 내가 꼭 필요로 하는 주택 조건 확인하기
           </p>
-        </Title>
-        <Description>
           <p className="description">
             이번엔 내가 왜 이사가 필요한지 생각해봐야 해요. 이전 집에서는 무엇이
             가장 불편했나요? 어떤 조건이 더 나아지길 바랬나요? 학교 또는
             직장과의 거리, 편의점, 마트, 병원 같은 필요한 시설의 유무 등 고려할
             조건을 나열하고 우선순위를 작성해보세요.
           </p>
-        </Description>
-        <div className="suggestion">
-          <div className="keywords-container">
+        </Title>
+
+        <Suggestion>
+          <KeywordsContainer>
             <div className="keyword-wrapper">
               <div className="keyword">
                 <div className="label">~한 주택</div>
               </div>
+
               <div className="keyword">
                 <div className="label">~가 좋은 주택</div>
               </div>
+
               <div className="keyword">
                 <div className="label">~가 아닌 주택</div>
               </div>
             </div>
-          </div>
-          <div className="design-component-instance-node">
+          </KeywordsContainer>
+
+          <Beaver>
             <Profile>
               <img className="beaver" alt="beaver" src="beaver.png" />
               <div className="bot-name">비버’s comment</div>
             </Profile>
+
             <Comment>
               <p className="comment">
                 질문에 해주신 답변을 토대로 사용자님이 관심 가질 수 있는 매물 몇
@@ -237,9 +235,9 @@ export const Step02 = () => {
                 문의해보세요!
               </p>
             </Comment>
-          </div>
-        </div>
-      </div>
+          </Beaver>
+        </Suggestion>
+      </Content>
     </StyledStep>
   );
 };
