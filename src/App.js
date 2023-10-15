@@ -4,13 +4,12 @@ import { Route, Routes } from "react-router-dom";
 import { sizing } from "./util";
 import Home from "./components/Home";
 import Chat from './components/Chat';
-import Plan from './components/plan';
+import Plan from './components/ActionPlan';
 import InquireForm from './components/InquireForm';
 
 const View = styled.div`
   background-color: #fff;
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
-  /* width: ${(100 / 108) * window.innerHeight}px; */
+  box-shadow: ${sizing(0)} ${sizing(4)} ${sizing(20)} ${sizing(0)} rgba(0, 0, 0, 0.3);
   width: ${sizing(1000)};
   height: 100vh;
   display: flex;
@@ -21,6 +20,8 @@ const View = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  overflow-y: auto;
 `;
 
 function App() {

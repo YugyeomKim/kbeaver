@@ -145,7 +145,7 @@ export default function Chat() {
           <Image src={require(`../assets/${answer.image}`)} />
         ))}
       </ImageContainer>
-    )
+    );
 
     if (checkedAnswers.length < 3) {
       const result = {
@@ -249,7 +249,6 @@ export default function Chat() {
                 ))
               : pageIndex === questionIdx && question.type === "image-select"
               ? ((disabled = true),
-                console.log(checked),
                 (
                   <ImageSelectContainer>
                     <ImageContainer>

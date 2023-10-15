@@ -11,8 +11,8 @@ const InputForm = styled.form`
   width: ${sizing(824)};
   padding: ${sizing(20)} ${sizing(24)};
 
-  border-radius: 12px;
-  border: 1px solid #d9d6d2;
+  border-radius:  ${sizing(12)};
+  border:  ${sizing(1)} solid #d9d6d2;
   background: #fff;
 `;
 
@@ -74,27 +74,33 @@ export default function InputField({
     if (questionType === "number" && isNaN(userInput)) {
       errorFunction(result, "숫자만 입력해주세요.");
     } else if (questionType === "input-check") {
-      /** @todo fetch result */
-      // const { region_exist } = await fetch('https://0201055967.for-seoul.synctreengine.com/region', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify({ region: userInput })
-      // }).catch((err) => {
-      //   console.log(err);
-      //   alert("서버에 문제가 생겼습니다. 다시 시도해주세요.")
-      //   window.location.replace("/")
-      // });
+      /** @todo fetch */
+      const fetchResult = await fetch("/region", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ region: userInput }),
+      }).catch((err) => {
+        console.log(err);
+        alert("서버에 문제가 생겼습니다. 다시 시도해주세요.");
+        window.location.replace("/");
+      });
 
-      const region_exist = true
+      console.log(`region: ${fetchResult.status}`);
+      // const { region_exist, result_region } = await fetchResult.json()
+      const region_exist = true;
+      const result_region = "서울특별시 강남구";
 
-      console.log(region_exist);
+      result.target.innerText = result_region;
 
       if (region_exist) {
         propsFunction(result);
       } else {
-        errorFunction(result, "정확한 동이름 혹은 지하철역을 입력해주세요.");
+        errorFunction(
+          result,
+          "주소를 잘못 입력하셨습니다! 다시 입력 바랍니다.  (OO시 OO구, 또는 OO역)"
+        );
       }
     } else {
       propsFunction(result);
