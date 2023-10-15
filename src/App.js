@@ -37,7 +37,6 @@ function App() {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/chat" element={<Chat handler={handleFetch} />} />
-          {/** @todo props로 내리기 */}
           <Route path="/plan" element={<Plan res={resData} />} />
           <Route path="/inquire" Component={InquireForm} />
         </Routes>

@@ -9,7 +9,10 @@ import InputField from "./InputField";
 import questions from "../assets/questions.json";
 import UserSaying from "./UserSaying";
 
-const Spinner = styled.div``;
+const Spinner = styled.img`
+  width: ${sizing(84)};
+  height: ${sizing(84)};
+`;
 
 const Container = styled.div`
   display: flex;
@@ -305,7 +308,7 @@ export default function Chat({ handler }) {
   }, [pageIndex]);
 
   return loading ? (
-    <Spinner>로딩중</Spinner>
+    <Spinner src={require("../assets/spiner.gif")} />
   ) : (
     <Container>
       <ChatContainer>{chatting()}</ChatContainer>
