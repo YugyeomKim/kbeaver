@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState } from "react";
+import Modal from "./Modal";
 
 const StyledContent = styled.div`
   display: flex;
@@ -224,6 +226,12 @@ const Button = styled.div`
 `;
 
 export const Content = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <StyledContent className="content">
       <Title>
@@ -327,7 +335,9 @@ export const Content = () => {
               </p>
             </BuildingInfo>
             <Button>
-              <div className="label">문의하기</div>
+              <button className="inquiry-button">
+                <div className="inquiry-label">문의하기</div>
+              </button>
             </Button>
           </BuildingDetail>
         </Product>
@@ -348,7 +358,10 @@ export const Content = () => {
             </BuildingInfo>
 
             <Button>
-              <div className="label">문의하기</div>
+              <button className="inquiry-button" onClick={toggleModal}>
+                {showModal && <Modal show={showModal} onClose={toggleModal} />}
+                <div className="inquiry-label">문의하기</div>
+              </button>
             </Button>
           </BuildingDetail>
         </Product>
