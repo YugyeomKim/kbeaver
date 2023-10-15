@@ -1,5 +1,3 @@
-import React from "react";
-// import { Comment } from "./Comment";
 import styled from "styled-components";
 
 const StyledStep = styled.div`
@@ -165,7 +163,7 @@ const Profile = styled.div`
   gap: 12px;
   position: relative;
 
-  & .bot-image {
+  & .beaver {
     height: 32px;
     position: relative;
     width: 32px;
@@ -231,13 +229,8 @@ export const Step01 = () => {
           </p>
         </Description>
         <div className="suggestion">
-          {/* <Comment
-            botImage="image.svg"
-            className="design-component-instance-node"
-          /> */}
-
           <Profile>
-            <img className="bot-image" alt="Bot image" src="bot-image.svg" />
+            <img className="beaver" alt="beaver" src="beaver.svg" />
             <div className="bot-name">비버’s comment</div>
           </Profile>
           <Comment>
