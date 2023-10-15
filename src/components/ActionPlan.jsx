@@ -16,13 +16,11 @@ const StyledPlan = styled.div`
   overflow-y: auto;
 `;
 
-const Plan = (props) => {
-  // const [res, setRes] = useState("");
-
+const Plan = ({ res }) => {
   return (
     <StyledPlan>
-        <TitleWrapper />
-        <ContentWrapper />
+      <TitleWrapper />
+      <ContentWrapper />
     </StyledPlan>
   );
 };

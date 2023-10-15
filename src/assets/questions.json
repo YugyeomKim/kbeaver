@@ -40,7 +40,7 @@
   {
     "category": "housing",
     "name": "region",
-    "text": "찾으시는 지역이 어디신가요? 지역 또는 지하철역을 입력해주세요. (OO시 OO구, 또는 OO역)",
+    "text": "찾으시는 지역이 어디신가요? 지역 또는 지하철역을 입력해주세요. (OO시 OO구, 또는 OO역) \n*서울의 경우, ‘서울특별시’의 완성형으로 작성해주세요.",
     "type": "input-check"
   },
   {
@@ -95,25 +95,25 @@
   {
     "category": "financial",
     "name": "income",
-    "text": "연 소득은 어떻게 되시나요?",
+    "text": "현재 연 소득이 어느 정도 되시나요? (00만원; 숫자만 입력해주세요)",
     "type": "number"
   },
   {
     "category": "financial",
     "name": "assets",
-    "text": "현금, 부동산 등 현재 보유중인 총 자산은 얼마인가요?",
+    "text": "현금, 부동산 등 현재 보유중인 총 자산은 얼마인가요? (00만원; 숫자만 입력해주세요)",
     "type": "number"
   },
   {
     "category": "financial",
     "name": "liabilities",
-    "text": "현재 담보/신용 등 총 부채는 얼마인가요?",
+    "text": "현재 담보/신용 등 총 부채는 얼마인가요? (00만원; 숫자만 입력해주세요)",
     "type": "number"
   },
   {
     "category": "financial",
     "name": "expenses",
-    "text": "1년동안 고정적으로 지출하는 금액 총 어느 정도인가요? (00만원; 숫자만 입력해주세요)",
+    "text": "연간 고정지출이 총 얼마인가요? (00만원; 숫자만 입력해주세요)",
     "type": "number"
   },
   {
