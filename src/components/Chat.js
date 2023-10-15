@@ -9,6 +9,8 @@ import InputField from "./InputField";
 import questions from "../assets/questions.json";
 import UserSaying from "./UserSaying";
 
+const Spinner = styled.div``;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -83,9 +85,10 @@ const Question = ({ text }) => {
   ));
 };
 
-export default function Chat() {
+export default function Chat({ handler }) {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [pageIndex, setPageIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [checked, setChecked] = useState([
@@ -192,7 +195,8 @@ export default function Chat() {
     ]);
   };
 
-  const handleEnding = (e) => {
+  const handleEnding = async (e) => {
+    setLoading(true)
     const totalAnswersArray = answers.filter(
       (answer) => answer.name !== "error"
     );
@@ -211,6 +215,28 @@ export default function Chat() {
     }
 
     console.log(totalAnswer);
+
+    const fetchResult = await fetch('/action', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(totalAnswer),
+    }).catch((err) => {
+      console.log(err);
+      alert("서버에 문제가 생겼습니다. 다시 시도해주세요.");
+      window.location.replace("/");
+    });
+
+    console.log(`action: ${fetchResult.status}`);
+
+    const res = await fetchResult.json().catch((err) => {
+      console.log(err);
+      alert("서버에 문제가 생겼습니다. 다시 시도해주세요.");
+      window.location.replace("/");
+    });
+
+    handler(res);
     navigate("/plan");
   };
 
@@ -278,7 +304,9 @@ export default function Chat() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [pageIndex]);
 
-  return (
+  return loading ? (
+    <Spinner>로딩중</Spinner>
+  ) : (
     <Container>
       <ChatContainer>{chatting()}</ChatContainer>
       <InputContainer>
