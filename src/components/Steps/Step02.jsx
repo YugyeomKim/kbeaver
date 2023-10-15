@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { sizing } from "../../util";
+import headIcon from "../../assets/head.svg";
 
 const StyledStep = styled.div`
   display: flex;
@@ -63,7 +64,7 @@ const Title = styled.div`
 
 const Content = styled.div`
   display: flex;
-  padding-bottom: ${sizing(0)};
+  padding-bottom: ${sizing(108)};
   flex-direction: column;
   align-items: flex-start;
   gap: ${sizing(48)};
@@ -78,7 +79,7 @@ const Suggestion = styled.div`
 
 const KeywordsContainer = styled.div`
   display: flex;
-  width: ${sizing(828)};
+  width: ${sizing(788)};
   padding: ${sizing(40)} ${sizing(20)};
   flex-direction: column;
   justify-content: center;
@@ -173,35 +174,32 @@ const Comment = styled.div`
   }
 `;
 
+const Head = styled.img`
+  width: ${sizing(24)};
+  height: ${sizing(24)};
+`
+
 export const Step02 = () => {
   return (
     <StyledStep>
       <Timeline>
         <div className="head">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <circle cx="12" cy="12" r="10" stroke="#FFB261" stroke-width="4" />
-          </svg>
+          <Head src={headIcon} />
         </div>
         <div className="trail" />
       </Timeline>
 
       <Content>
         <Title>
-          <p className="title">
+          <div className="title">
             STEP 2. 내가 꼭 필요로 하는 주택 조건 확인하기
-          </p>
-          <p className="description">
+          </div>
+          <div className="description">
             이번엔 내가 왜 이사가 필요한지 생각해봐야 해요. 이전 집에서는 무엇이
             가장 불편했나요? 어떤 조건이 더 나아지길 바랬나요? 학교 또는
             직장과의 거리, 편의점, 마트, 병원 같은 필요한 시설의 유무 등 고려할
             조건을 나열하고 우선순위를 작성해보세요.
-          </p>
+          </div>
         </Title>
 
         <Suggestion>
@@ -228,13 +226,13 @@ export const Step02 = () => {
             </Profile>
 
             <Comment>
-              <p className="comment">
+              <div className="comment">
                 질문에 해주신 답변을 토대로 사용자님이 관심 가질 수 있는 매물 몇
                 개를 찾아왔어요. 만약 실제로 방문해 보고 싶은 매물이 있다면
                 '문의하기' 버튼을 클릭해보세요. 비버가 대신 문의글을
                 작성해드릴게요. 작성된 글을 검토하시고 바로 중개사무소에
                 문의해보세요!
-              </p>
+              </div>
             </Comment>
           </Beaver>
         </Suggestion>

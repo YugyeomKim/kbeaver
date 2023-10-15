@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   align-items: center;
   border-radius:  ${sizing(12)};
   border:  ${sizing(1)} solid #ccc9c5;
+  background: #ffffff;
 
   & .label {
     color: var(--material-theme-ref-neutral-neutral-6, #17130e);

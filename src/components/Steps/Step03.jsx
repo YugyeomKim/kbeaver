@@ -1,6 +1,7 @@
 import { Content } from "./Content";
 import styled from "styled-components";
 import { sizing } from "../../util";
+import headIcon from "../../assets/head.svg";
 
 const StyledStep = styled.div`
   display: flex;
@@ -30,20 +31,17 @@ const Timeline = styled.div`
   }
 `;
 
+const Head = styled.img`
+  width: ${sizing(24)};
+  height: ${sizing(24)};
+`
+
 export const Step03 = () => {
   return (
     <StyledStep>
       <Timeline>
         <div className="head">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <circle cx="12" cy="12" r="10" stroke="#FFB261" stroke-width="4" />
-          </svg>
+          <Head src={headIcon} />
         </div>
         <div className="trail" />
       </Timeline>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { sizing } from "../../util";
+import headIcon from "../../assets/head.svg";
 
 const StyledStep = styled.div`
   display: flex;
@@ -63,7 +64,7 @@ const Title = styled.div`
 
 const Content = styled.div`
   display: flex;
-  padding-bottom: ${sizing(0)};
+  padding-bottom: ${sizing(108)};
   flex-direction: column;
   align-items: flex-start;
   gap: ${sizing(48)};
@@ -183,35 +184,32 @@ const Product = styled.div`
   }
 `;
 
+const Head = styled.img`
+  width: ${sizing(24)};
+  height: ${sizing(24)};
+`
+
 export const Step01 = () => {
   return (
     <StyledStep>
       <Timeline>
         <div className="head">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <circle cx="12" cy="12" r="10" stroke="#FFB261" stroke-width="4" />
-          </svg>
+          <Head src={headIcon} />
         </div>
         <div className="trail" />
       </Timeline>
 
       <Content>
         <Title>
-          <p className="title">STEP 1. 내 자산과 대출 상품 파악하기</p>
-          <p className="description">
+          <div className="title">STEP 1. 내 자산과 대출 상품 파악하기</div>
+          <div className="description">
             집을 마련할 때는 먼저 얼마나 많은 돈을 쓸 수 있는지 계산해봐야 해요.
             그 다음으로는 어떤 종류의 집(아파트, 빌라, 다가구집, 원룸, <br></br>
             오피스텔 등)을 월세로 살건지 전세로 살건지 결정해야 해요. 전세를
             선택한다면, 은행에서 전세자금 대출이 필요하겠죠? 그런 경우엔 은행에
             가서 상담도 받아보세요. &#39;얼마나 대출받을 수 있는지&#39;와
             &#39;이자는 얼마나 나오는지&#39;를 반드시 확인해야 해요.
-          </p>
+          </div>
         </Title>
 
         <Suggestion>
@@ -222,7 +220,7 @@ export const Step01 = () => {
             </Profile>
 
             <Comment>
-              <p className="comment">
+              <div className="comment">
                 사용자 님의 답변을 분석한 결과, 사용자 님은 자산은 ~ 규모이고 ~
                 아래에 사용자 님이 관심가질만한 대출 상품을
                 가져왔어요.&nbsp;&nbsp;
@@ -230,7 +228,7 @@ export const Step01 = () => {
                 &lt;- 여기 들어갈 내용은 금융상품 추천 질문 완성되면
                 추가하겠습니다. 전체적인 컨셉은 ‘금융상품 추천 관련 질문’ 에서
                 받았던 답변을 요약해주는 것 입니다.
-              </p>
+              </div>
             </Comment>
           </Beaver>
 

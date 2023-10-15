@@ -4,7 +4,7 @@ import { sizing } from "../util";
 
 const Wrapper = styled.div`
   display: flex;
-  padding-bottom: ${sizing(0)};
+  padding-bottom: ${sizing(40)};
   flex-direction: column;
   align-items: flex-start;
   gap: ${sizing(4)};
