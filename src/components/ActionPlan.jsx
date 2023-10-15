@@ -1,22 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 import { ContentWrapper } from "./ContentWrapper";
 import { TitleWrapper } from "./TitleWrapper";
-import styled from "styled-components";
+import { sizing } from "../util";
 
 const StyledPlan = styled.div`
-  display: inline-flex;
-  padding: 100px 64px;
+  padding: ${sizing(100)} ${sizing(64)};
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  background: #fff;
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
+  gap: ${sizing(54)};
+  width: ${sizing(872)};
 
-  & .plan {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 54px;
-  }
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const Plan = (props) => {
@@ -24,10 +21,8 @@ const Plan = (props) => {
 
   return (
     <StyledPlan>
-      <div className="plan">
         <TitleWrapper />
         <ContentWrapper />
-      </div>
     </StyledPlan>
   );
 };

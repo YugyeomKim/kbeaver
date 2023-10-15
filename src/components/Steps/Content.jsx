@@ -1,31 +1,32 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../InquireForm";
+import { sizing } from "../../util";
 
 const StyledContent = styled.div`
   display: flex;
-  padding-bottom: 0px;
+  padding-bottom: ${sizing(108)};
   flex-direction: column;
   align-items: flex-start;
-  gap: 48px;
+  gap: ${sizing(48)};
 `;
 
 const Title = styled.div`
   display: flex;
-  width: 828px;
+  width: ${sizing(828)};
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: ${sizing(12)};
 
   & .title {
     color: var(--material-theme-ref-neutral-neutral-6, #17130e);
 
     /* title / t5-B */
     font-family: Pretendard;
-    font-size: 20px;
+    font-size: ${sizing(20)};
     font-style: normal;
     font-weight: 700;
-    line-height: 32px; /* 160% */
+    line-height: ${sizing(32)}; /* 160% */
   }
 
   & .description {
@@ -33,31 +34,31 @@ const Title = styled.div`
 
     /* label / l3-M */
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: ${sizing(16)};
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: ${sizing(24)}; /* 150% */
   }
 `;
 
 const Beaver = styled.div`
   display: flex;
-  width: 828px;
+  width: ${sizing(828)};
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: ${sizing(12)};
 `;
 
 const Profile = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: ${sizing(12)};
 
   & .beaver {
     display: flex;
-    width: 32px;
-    height: 32px;
-    padding: 6px 4px 6px 5px;
+    width: ${sizing(32)};
+    height: ${sizing(32)};
+    padding: ${sizing(6)} ${sizing(4)} ${sizing(6)} ${sizing(5)};
     justify-content: center;
     align-items: center;
   }
@@ -67,21 +68,21 @@ const Profile = styled.div`
 
     /* label / l3-SB */
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: ${sizing(16)};
     font-style: normal;
     font-weight: 600;
-    line-height: 24px; /* 150% */
+    line-height: ${sizing(24)}; /* 150% */
   }
 `;
 
 const Comment = styled.div`
   display: flex;
-  padding: 20px 24px;
+  padding: ${sizing(20)} ${sizing(24)};
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: ${sizing(20)};
   align-self: stretch;
-  border-radius: 0px 12px 12px 12px;
+  border-radius: ${sizing(0)} ${sizing(12)} ${sizing(12)} ${sizing(12)};
   background: var(--material-theme-ref-secondary-secondary-96, #fff1e7);
 
   & .comment {
@@ -89,18 +90,18 @@ const Comment = styled.div`
 
     /* label / l3-M */
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: ${sizing(16)};
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: ${sizing(24)}; /* 150% */
   }
 `;
 
 const StyledRow = styled.div`
   display: flex;
-  width: 828px;
+  width: ${sizing(828)};
   align-items: flex-start;
-  gap: 12px;
+  gap:  ${sizing(12)};
 `;
 
 const Product = styled.div`
@@ -112,47 +113,44 @@ const Product = styled.div`
 
 const BuildingImg = styled.div`
   display: flex;
-  width: 408px;
-  height: 280px;
+  width:  ${sizing(408)};
+  height:  ${sizing(280)};
   justify-content: center;
   align-items: center;
 
   & .building-image {
-    border-radius: 12px 12px 0px 0px;
-    border-top: 1px solid #ccc9c5;
-    border-right: 1px solid #ccc9c5;
-    border-left: 1px solid #ccc9c5;
+    border-radius:  ${sizing(12)}  ${sizing(12)}  ${sizing(0)}  ${sizing(0)};
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-    width: 408px;
-    height: 305px;
+    width: ${sizing(408)};
+    height: ${sizing(305)};
     flex-shrink: 0;
-    z-index: 1;
   }
 `;
 
 const BuildingDetail = styled.div`
   display: flex;
-  padding: 16px 20px;
+  padding: ${sizing(16)} ${sizing(20)};
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-  border-radius: 0px 0px 12px 12px;
-  border: 1px solid #ccc9c5;
+  border-radius: ${sizing(0)} ${sizing(0)} ${sizing(12)} ${sizing(12)};
+  border: ${sizing(1)} solid #ccc9c5;
+  background: #ffffff;
 `;
 
 const BuildingInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
+  gap: ${sizing(2)};
 
   & .name {
     color: var(--material-theme-ref-neutral-neutral-6, #17130e);
     font-family: Pretendard;
-    font-size: 18px;
+    font-size: ${sizing(18)};
     font-style: normal;
     font-weight: 700;
-    line-height: 28px; /* 155.556% */
+    line-height: ${sizing(28)}; /* 155.556% */
   }
 
   & .detail {
@@ -160,10 +158,10 @@ const BuildingInfo = styled.div`
 
     /* label / l3-M */
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: ${sizing(16)};
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: ${sizing(24)}; /* 150% */
   }
 
   & .text {
@@ -189,24 +187,24 @@ const BuildingInfo = styled.div`
 
 const Button = styled.div`
   display: flex;
-  padding: 8px 12px;
+  padding: ${sizing(8)} ${sizing(12)};
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
-  border-radius: 8px;
+  gap: ${sizing(2)};
+  border-radius: ${sizing(8)};
   background: var(--material-theme-key-colors-primary, #ffb261);
 
   & .inquiry-button {
     all: unset;
     align-items: flex-start;
     background-color: var(--material-themekey-colorsprimary);
-    border-radius: 8px;
+    border-radius: ${sizing(8)};
     box-sizing: border-box;
     display: inline-flex;
     flex: 0 0 auto;
     flex-direction: column;
-    gap: 2px;
-    padding: 8px 12px;
+    gap: ${sizing(2)};
+    padding: ${sizing(8)} ${sizing(12)};
     position: relative;
   }
 
@@ -218,7 +216,7 @@ const Button = styled.div`
     font-weight: var(--label-l3-m-font-weight);
     letter-spacing: var(--label-l3-m-letter-spacing);
     line-height: var(--label-l3-m-line-height);
-    margin-top: -1px;
+    margin-top: ${sizing(-1)};
     position: relative;
     white-space: nowrap;
     width: fit-content;
@@ -264,7 +262,7 @@ export const Content = () => {
             <img
               className="building-image "
               alt="Building"
-              src="image 16.png"
+              src="image16.png"
             />
           </BuildingImg>
 
@@ -291,7 +289,7 @@ export const Content = () => {
             <img
               className="building-image "
               alt="Building"
-              src="image 17.png"
+              src="image17.png"
             />
           </BuildingImg>
 
@@ -321,7 +319,7 @@ export const Content = () => {
             <img
               className="building-image "
               alt="Building"
-              src="image 18.png"
+              src="image18.png"
             />
           </BuildingImg>
 
@@ -344,7 +342,7 @@ export const Content = () => {
 
         <Product>
           <BuildingImg>
-            <img className="building-image" alt="Building" src="image 19.png" />
+            <img className="building-image" alt="Building" src="image19.png" />
           </BuildingImg>
 
           <BuildingDetail>

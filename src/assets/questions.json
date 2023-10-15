@@ -1,0 +1,138 @@
+[
+  {
+    "category": "housing",
+    "name": "jeonse",
+    "text": "안녕하세요! 상담을 해줄 비버라고 해요. 맞춤형 플랜을 만들어 드리기 위해 몇 가지 질문을 할게요. \n사용자님은 해당되는 답변을 하나만 골라주시면 돼요!  \n주택을 어떤 형식으로 임대하실 건가요?",
+    "type": "select",
+    "options": [
+      { "text": "전세로 살고 싶어요", "value": true },
+      { "text": "월세로 살고 싶어요", "value": false }
+    ]
+  },
+  {
+    "category": "housing",
+    "name": "alone",
+    "text": "누구와 살 집을 찾고 계신가요?",
+    "type": "select",
+    "options": [
+      { "text": "가족과 함께 살거에요", "value": true },
+      { "text": "혼자 살거에요", "value": false }
+    ]
+  },
+  {
+    "category": "housing",
+    "name": "deposit",
+    "text": "전세금은 몇 만원으로 생각하고 계시나요? 예를 들어 5천만원이라면 ‘5000’ 만 입력해주세요.",
+    "type": "number"
+  },
+  {
+    "category": "housing",
+    "name": "deposit",
+    "text": "월세 보증금은 몇 만원으로 생각하고 계시나요? 예를 들어 5천만원이라면 ‘5000’ 만 입력해주세요.",
+    "type": "number"
+  },
+  {
+    "category": "housing",
+    "name": "rent_cost",
+    "text": "월세는 최대 몇 만원으로 생각하고 계시나요? 예를 들어 70만원이라면 ‘70’ 만 입력해주세요.",
+    "type": "number"
+  },
+  {
+    "category": "housing",
+    "name": "region",
+    "text": "찾으시는 지역이 어디신가요? 지역 또는 지하철역을 입력해주세요. (OO시 OO구, 또는 OO역)",
+    "type": "input-check"
+  },
+  {
+    "category": "housing",
+    "name": "house_type",
+    "text": "찾으시는 집 유형은 어떻게 되시나요?",
+    "type": "select",
+    "options": [
+      { "text": "아파트", "value": "아파트" },
+      { "text": "오피스텔", "value": "오피스텔" },
+      { "text": "원/투룸", "value": "원/투룸" },
+      { "text": "빌라", "value": "빌라" },
+      { "text": "주택", "value": "주택" }
+    ]
+  },
+  {
+    "category": "housing",
+    "name": "image_keyword",
+    "text": "다음 그림 중 꿈꾸던 주택과 가까운 그림을 3개 선택하고 [선택 완료] 버튼을 눌러 주세요.",
+    "type": "image-select",
+    "options": [
+      { "image": "walking.png", "value": "걷고 싶은 길이 있는 주택" },
+      {
+        "image": "community.png",
+        "value": "커뮤니티 시설이 잘 되어 있는 주택"
+      },
+      { "image": "hospital.png", "value": "주변에 병원이 있는 주택" },
+      { "image": "highfloor.png", "value": "고층에 야경이 잘 보이는 주택" },
+      {
+        "image": "facility.png",
+        "value": "주변에 편의시설이 잘 되어 있는 주택"
+      },
+      { "image": "transportation.png", "value": "교통이 편리한 주택" }
+    ]
+  },
+  {
+    "category": "financial",
+    "name": "age",
+    "text": "만 나이를 숫자로 입력해주세요.",
+    "type": "number"
+  },
+  {
+    "category": "financial",
+    "name": "gaurdian",
+    "text": "지금부터는 사용자님에게 어울리는 대출 상품을 추천드리기 위해 질문을 할게요. \n피성년,피한정 후견인 여부를 확인하려고 하는데 법원을 통해 선임된 후견인이 있나요?",
+    "type": "select",
+    "options": [
+      { "text": "네, 있어요", "value": true },
+      { "text": "아니오, 없어요", "value": false }
+    ]
+  },
+  {
+    "category": "financial",
+    "name": "income",
+    "text": "연 소득은 어떻게 되시나요?",
+    "type": "number"
+  },
+  {
+    "category": "financial",
+    "name": "assets",
+    "text": "현금, 부동산 등 현재 보유중인 총 자산은 얼마인가요?",
+    "type": "number"
+  },
+  {
+    "category": "financial",
+    "name": "liabilities",
+    "text": "현재 담보/신용 등 총 부채는 얼마인가요?",
+    "type": "number"
+  },
+  {
+    "category": "financial",
+    "name": "expenses",
+    "text": "1년동안 고정적으로 지출하는 금액 총 어느 정도인가요? (00만원; 숫자만 입력해주세요)",
+    "type": "number"
+  },
+  {
+    "category": "financial",
+    "name": "income_source",
+    "text": "대출을 갚아나갈 주요 소득은 어떤 소득인지 선택해주세요",
+    "type": "select",
+    "options": [
+      { "text": "근로소득", "value": "근로소득" },
+      { "text": "사업소득", "value": "사업소득" },
+      { "text": "금융소득", "value": "금융소득" },
+      { "text": "기타소득", "value": "기타소득" }
+    ]
+  },
+  {
+    "category": "ending",
+    "name": "income_source",
+    "text": "좋아요. 이제 사용자님에게 추천할 플랜을 만들 수 있을 것 같아요. \n지금 바로 맞춤 플랜들 확인해보세요!",
+    "type": "ending",
+    "options": [{ "text": "내 맞춤 플랜 확인하기", "value": true }]
+  }
+]

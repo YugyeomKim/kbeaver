@@ -1,31 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import { sizing } from "../util";
 
 const Wrapper = styled.div`
   display: flex;
-  padding-bottom: 0px;
+  padding-bottom: ${sizing(40)};
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: ${sizing(4)};
   align-self: stretch;
-  border-bottom: 1px solid #d9d6d2;
+  border-bottom: ${sizing(1)} solid #d9d6d2;
 
   & .sub-title {
     color: var(--material-theme-ref-neutral-neutral-4, #120d09);
     font-family: Pretendard;
-    font-size: 26px;
+    font-size: ${sizing(26)};
     font-style: normal;
     font-weight: 600;
-    line-height: 40px; /* 153.846% */
+    line-height: ${sizing(40)}; /* 153.846% */
   }
 
   & .title {
     color: var(--material-theme-ref-neutral-neutral-4, #120d09);
     font-family: Pretendard;
-    font-size: 48px;
+    font-size: ${sizing(48)};
     font-style: normal;
     font-weight: 700;
-    line-height: 60px; /* 125% */
+    line-height: ${sizing(60)}; /* 125% */
   }
 `;
 

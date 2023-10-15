@@ -1,6 +1,6 @@
 import React from "react";
 import { StepWrapper } from "./StepWrapper";
-import { Button } from "./Button";
+import { Button } from "./ReButton";
 import styled from "styled-components";
 
 const StyledContentScreen = styled.div`
