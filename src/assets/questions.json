@@ -33,7 +33,7 @@
   },
   {
     "category": "housing",
-    "name": "rent",
+    "name": "rent_cost",
     "text": "월세는 최대 몇 만원으로 생각하고 계시나요? 예를 들어 70만원이라면 ‘70’ 만 입력해주세요.",
     "type": "number"
   },
