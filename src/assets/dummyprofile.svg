@@ -1,0 +1,20 @@
+<svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="header">
+<g clip-path="url(#clip0_108_6945)">
+<mask id="path-1-inside-1_108_6945" fill="white">
+<path d="M0 12C0 5.37258 5.37258 0 12 0H88V88H12C5.37258 88 0 82.6274 0 76V12Z"/>
+</mask>
+<path d="M0 12C0 5.37258 5.37258 0 12 0H88V88H12C5.37258 88 0 82.6274 0 76V12Z" fill="#EEEEEE"/>
+<g id="Group 2">
+<rect id="Rectangle 17" x="29" y="18" width="30" height="30" rx="15" fill="white"/>
+<rect id="Rectangle 18" x="11" y="48" width="66" height="61" rx="30.5" fill="white"/>
+</g>
+</g>
+<path d="M-1 12C-1 4.8203 4.8203 -1 12 -1H88V1H12C5.92487 1 1 5.92487 1 12H-1ZM88 89H12C4.8203 89 -1 83.1797 -1 76H1C1 82.0751 5.92487 87 12 87H88V89ZM12 89C4.8203 89 -1 83.1797 -1 76V12C-1 4.8203 4.8203 -1 12 -1V1C5.92487 1 1 5.92487 1 12V76C1 82.0751 5.92487 87 12 87V89ZM88 0V88V0Z" fill="#CCC9C5" mask="url(#path-1-inside-1_108_6945)"/>
+</g>
+<defs>
+<clipPath id="clip0_108_6945">
+<path d="M0 12C0 5.37258 5.37258 0 12 0H88V88H12C5.37258 88 0 82.6274 0 76V12Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>
