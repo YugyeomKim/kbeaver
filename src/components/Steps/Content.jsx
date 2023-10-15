@@ -114,17 +114,17 @@ const BuildingImg = styled.div`
   height: 280px;
   justify-content: center;
   align-items: center;
-  border-radius: 12px 12px 0px 0px;
-  border-top: 1px solid #ccc9c5;
-  border-right: 1px solid #ccc9c5;
-  border-left: 1px solid #ccc9c5;
 
   & .building-image {
-    width: 409px;
+    border-radius: 12px 12px 0px 0px;
+    border-top: 1px solid #ccc9c5;
+    border-right: 1px solid #ccc9c5;
+    border-left: 1px solid #ccc9c5;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    width: 408px;
     height: 305px;
     flex-shrink: 0;
-    background: url(https://github.com/Syncathon-SYEC/K-Beaver/blob/main/public/image%2016.png),
-      lightgray 50% / cover no-repeat;
+    z-index: 1;
   }
 `;
 
@@ -302,6 +302,53 @@ export const Content = () => {
               <button className="inquiry-button">
                 <div className="inquiry-label">문의하기</div>
               </button>
+            </Button>
+          </BuildingDetail>
+        </Product>
+      </StyledRow>
+
+      <StyledRow>
+        <Product>
+          <BuildingImg className="building-image">
+            <img
+              className="building-image "
+              alt="Building"
+              src="image 18.png"
+            />
+          </BuildingImg>
+
+          <BuildingDetail>
+            <BuildingInfo>
+              <div className="name">전세 1억 3,000만</div>
+              <p className="detail">
+                <span className="text">봉천동 단독주택 3층 </span>
+                <span className="splitter">|</span>
+                <span className="text"> 단독주택</span>
+              </p>
+            </BuildingInfo>
+            <Button>
+              <div className="label">문의하기</div>
+            </Button>
+          </BuildingDetail>
+        </Product>
+
+        <Product>
+          <BuildingImg>
+            <img className="building-image" alt="Building" src="image 19.png" />
+          </BuildingImg>
+
+          <BuildingDetail>
+            <BuildingInfo>
+              <div className="name">전세 1억 2,000만</div>
+              <p className="detail">
+                <span className="text">봉천동 1527-8 3층 </span>
+                <span className="splitter">|</span>
+                <span className="text"> 단독주택</span>
+              </p>
+            </BuildingInfo>
+
+            <Button>
+              <div className="label">문의하기</div>
             </Button>
           </BuildingDetail>
         </Product>
