@@ -19,7 +19,9 @@ const StyledPlan = styled.div`
   }
 `;
 
-const Plan = () => {
+const Plan = (props) => {
+  // const [res, setRes] = useState("");
+
   return (
     <StyledPlan>
       <div className="plan">

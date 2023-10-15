@@ -192,15 +192,15 @@ export const Step02 = () => {
 
       <Content>
         <Title>
-          <p className="title">
+          <div className="title">
             STEP 2. 내가 꼭 필요로 하는 주택 조건 확인하기
-          </p>
-          <p className="description">
+          </div>
+          <div className="description">
             이번엔 내가 왜 이사가 필요한지 생각해봐야 해요. 이전 집에서는 무엇이
             가장 불편했나요? 어떤 조건이 더 나아지길 바랬나요? 학교 또는
             직장과의 거리, 편의점, 마트, 병원 같은 필요한 시설의 유무 등 고려할
             조건을 나열하고 우선순위를 작성해보세요.
-          </p>
+          </div>
         </Title>
 
         <Suggestion>
@@ -227,13 +227,13 @@ export const Step02 = () => {
             </Profile>
 
             <Comment>
-              <p className="comment">
+              <div className="comment">
                 질문에 해주신 답변을 토대로 사용자님이 관심 가질 수 있는 매물 몇
                 개를 찾아왔어요. 만약 실제로 방문해 보고 싶은 매물이 있다면
                 '문의하기' 버튼을 클릭해보세요. 비버가 대신 문의글을
                 작성해드릴게요. 작성된 글을 검토하시고 바로 중개사무소에
                 문의해보세요!
-              </p>
+              </div>
             </Comment>
           </Beaver>
         </Suggestion>

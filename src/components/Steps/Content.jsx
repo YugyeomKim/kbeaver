@@ -235,13 +235,13 @@ export const Content = () => {
   return (
     <StyledContent className="content">
       <Title>
-        <p className="title">STEP 3. 매물 찾아보고 부동산에 문의하기</p>
-        <p className="description">
+        <div className="title">STEP 3. 매물 찾아보고 부동산에 문의하기</div>
+        <div className="description">
           온라인으로 집의 사진, 가격, 위치 등을 확인하고 실제로 방문해볼 매물을
           몇 개 후보로 정했다면, 부동산 방문 문의를 하시는 것이 좋아요. 방문
           전에 문의하지 않으면 원하는 집을 보지 못할 확률이 높아요. 방문
           문의글은 비버가 수집한 정보를 바탕으로 자동 생성해 줄게요.
-        </p>
+        </div>
       </Title>
       <Beaver>
         <Profile>
@@ -249,12 +249,12 @@ export const Content = () => {
           <div className="bot-name">비버’s comment</div>
         </Profile>
         <Comment>
-          <p className="comment">
+          <div className="comment">
             질문에 해주신 답변을 토대로 사용자님이 관심 가질 수 있는 매물 몇
             개를 찾아왔어요. 만약 실제로 방문해 보고 싶은 매물이 있다면
             '문의하기' 버튼을 클릭해보세요. 비버가 대신 문의글을 작성해드릴게요.
             작성된 글을 검토하시고 바로 중개사무소에 문의해보세요!
-          </p>
+          </div>
         </Comment>
       </Beaver>
 
@@ -271,11 +271,11 @@ export const Content = () => {
           <BuildingDetail>
             <BuildingInfo>
               <div className="name">전세 1억 5,000만</div>
-              <p className="detail">
+              <div className="detail">
                 <span className="text">봉전동 1522-3 3층 </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
-              </p>
+              </div>
             </BuildingInfo>
 
             <Button>
@@ -299,11 +299,11 @@ export const Content = () => {
             <BuildingInfo>
               <div className="name">전세 1억 6,000만</div>
 
-              <p className="detail">
+              <div className="detail">
                 <span className="text">봉천동 1563-12 중간층 </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
-              </p>
+              </div>
             </BuildingInfo>
 
             <Button>
@@ -328,11 +328,11 @@ export const Content = () => {
           <BuildingDetail>
             <BuildingInfo>
               <div className="name">전세 1억 3,000만</div>
-              <p className="detail">
+              <div className="detail">
                 <span className="text">봉천동 단독주택 3층 </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
-              </p>
+              </div>
             </BuildingInfo>
             <Button>
               <button className="inquiry-button">
@@ -350,11 +350,11 @@ export const Content = () => {
           <BuildingDetail>
             <BuildingInfo>
               <div className="name">전세 1억 2,000만</div>
-              <p className="detail">
+              <div className="detail">
                 <span className="text">봉천동 1527-8 3층 </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
-              </p>
+              </div>
             </BuildingInfo>
 
             <Button>
