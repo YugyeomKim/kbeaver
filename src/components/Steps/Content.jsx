@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState } from "react";
+import Modal from "../InquireForm";
 import { sizing } from "../../util";
 
 const StyledContent = styled.div`
@@ -222,6 +224,12 @@ const Button = styled.div`
 `;
 
 export const Content = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <StyledContent className="content">
       <Title>
@@ -254,7 +262,7 @@ export const Content = () => {
             <img
               className="building-image "
               alt="Building"
-              src="image 16.png"
+              src="image16.png"
             />
           </BuildingImg>
 
@@ -281,7 +289,7 @@ export const Content = () => {
             <img
               className="building-image "
               alt="Building"
-              src="image 17.png"
+              src="image17.png"
             />
           </BuildingImg>
 
@@ -311,7 +319,7 @@ export const Content = () => {
             <img
               className="building-image "
               alt="Building"
-              src="image 18.png"
+              src="image18.png"
             />
           </BuildingImg>
 
@@ -334,7 +342,7 @@ export const Content = () => {
 
         <Product>
           <BuildingImg>
-            <img className="building-image" alt="Building" src="image 19.png" />
+            <img className="building-image" alt="Building" src="image19.png" />
           </BuildingImg>
 
           <BuildingDetail>
@@ -348,7 +356,8 @@ export const Content = () => {
             </BuildingInfo>
 
             <Button>
-              <button className="inquiry-button">
+              <button className="inquiry-button" onClick={toggleModal}>
+                {showModal && <Modal show={showModal} onClose={toggleModal} />}
                 <div className="inquiry-label">문의하기</div>
               </button>
             </Button>

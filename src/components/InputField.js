@@ -74,7 +74,6 @@ export default function InputField({
     if (questionType === "number" && isNaN(userInput)) {
       errorFunction(result, "숫자만 입력해주세요.");
     } else if (questionType === "input-check") {
-      /** @todo fetch */
       const fetchResult = await fetch("/region", {
         method: "POST",
         headers: {
@@ -88,11 +87,13 @@ export default function InputField({
       });
 
       console.log(`region: ${fetchResult.status}`);
-      // const { region_exist, result_region } = await fetchResult.json()
-      const region_exist = true;
-      const result_region = "서울특별시 강남구";
+      const { region_exist, result_region } = await fetchResult.json()
+      // const region_exist = true;
+      // const result_region = "서울특별시 강남구";
+      
+      console.log(region_exist, result_region);
 
-      result.target.innerText = result_region;
+      result.target.innerText = result_region ? result_region : userInput;
 
       if (region_exist) {
         propsFunction(result);

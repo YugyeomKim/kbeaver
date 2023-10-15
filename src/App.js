@@ -29,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/chat" Component={Chat} />
+          {/** @todo props로 내리기 */}
           <Route path="/plan" Component={Plan} />
           <Route path="/inquire" Component={InquireForm} />
         </Routes>
