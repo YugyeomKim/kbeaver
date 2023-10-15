@@ -16,7 +16,7 @@ const StyledPlan = styled.div`
   overflow-y: auto;
 `;
 
-const Plan = () => {
+const Plan = ({ res }) => {
   return (
     <StyledPlan>
         <TitleWrapper />
