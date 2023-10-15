@@ -96,17 +96,13 @@ const StyledStep = styled.div`
   }
 
   & .label {
-    color: var(--material-themerefneutralneutral6);
-    font-family: var(--label-l3-SB-font-family);
-    font-size: var(--label-l3-SB-font-size);
-    font-style: var(--label-l3-SB-font-style);
-    font-weight: var(--label-l3-SB-font-weight);
-    letter-spacing: var(--label-l3-SB-letter-spacing);
-    line-height: var(--label-l3-SB-line-height);
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    display: flex;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    border-radius: 12px;
+    background: var(--material-theme-key-colors-primary, #ffb261);
   }
 `;
 
@@ -171,26 +167,24 @@ const Profile = styled.div`
 `;
 
 const Comment = styled.div`
-  align-items: flex-start;
-  background-color: var(--material-themerefsecondarysecondary96);
-  border-radius: 0px 12px 12px 12px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
   padding: 20px 24px;
-  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+  border-radius: 0px 12px 12px 12px;
+  background: var(--material-theme-ref-secondary-secondary-96, #fff1e7);
 
   & .comment {
-    align-self: stretch;
-    color: var(--material-themerefneutralneutral6);
-    font-family: var(--label-l3-m-font-family);
-    font-size: var(--label-l3-m-font-size);
-    font-style: var(--label-l3-m-font-style);
-    font-weight: var(--label-l3-m-font-weight);
-    letter-spacing: var(--label-l3-m-letter-spacing);
-    line-height: var(--label-l3-m-line-height);
-    margin-top: -1px;
-    position: relative;
+    color: var(--material-theme-ref-neutral-neutral-6, #17130e);
+
+    /* label / l3-M */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
   }
 `;
 
@@ -231,7 +225,7 @@ export const Step02 = () => {
           </div>
           <div className="design-component-instance-node">
             <Profile>
-              <img className="beaver" alt="beaver" src="beaver.svg" />
+              <img className="beaver" alt="beaver" src="beaver.png" />
               <div className="bot-name">비버’s comment</div>
             </Profile>
             <Comment>
