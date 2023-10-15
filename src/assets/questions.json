@@ -72,6 +72,12 @@
   },
   {
     "category": "financial",
+    "name": "age",
+    "text": "만 나이를 숫자로 입력해주세요.",
+    "type": "number"
+  },
+  {
+    "category": "financial",
     "name": "gaurdian",
     "text": "지금부터는 사용자님에게 어울리는 대출 상품을 추천드리기 위해 질문을 할게요. \n피성년,피한정 후견인 여부를 확인하려고 하는데 법원을 통해 선임된 후견인이 있나요?",
     "type": "select",
