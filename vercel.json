@@ -1,8 +1,8 @@
 {
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "https://0201055967.for-seoul.synctreengine.com/api/$1"
+      "src": "/(.*)",
+      "dest": "https://0201055967.for-seoul.synctreengine.com/$1"
     }
   ]
 }
