@@ -94,6 +94,7 @@ export default function InputField({
       console.log(region_exist, result_region);
 
       result.target.innerText = result_region ? result_region : userInput;
+      result.target.value = result_region ? result_region : userInput;
 
       if (region_exist) {
         propsFunction(result);
