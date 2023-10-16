@@ -20,7 +20,7 @@ const Plan = ({ res }) => {
   return (
     <StyledPlan>
       <TitleWrapper />
-      <ContentWrapper />
+      <ContentWrapper res={res} />
     </StyledPlan>
   );
 };

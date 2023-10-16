@@ -12,12 +12,12 @@ const StepsWrapper = styled.div`
   gap: ${sizing(-8)};
 `;
 
-export const StepWrapper = () => {
+export const StepWrapper = ({ res }) => {
   return (
     <StepsWrapper>
-      <Step01 />
-      <Step02 />
-      <Step03 />
+      <Step01 plan1={res.plan1} />
+      <Step02 plan2={res.plan2} />
+      <Step03 plan3={res.plan3} />
     </StepsWrapper>
   );
 };

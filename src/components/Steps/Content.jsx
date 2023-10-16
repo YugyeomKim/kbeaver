@@ -101,7 +101,7 @@ const StyledRow = styled.div`
   display: flex;
   width: ${sizing(828)};
   align-items: flex-start;
-  gap:  ${sizing(12)};
+  gap: ${sizing(12)};
 `;
 
 const Product = styled.div`
@@ -113,13 +113,13 @@ const Product = styled.div`
 
 const BuildingImg = styled.div`
   display: flex;
-  width:  ${sizing(408)};
-  height:  ${sizing(280)};
+  width: ${sizing(408)};
+  height: ${sizing(280)};
   justify-content: center;
   align-items: center;
 
   & .building-image {
-    border-radius:  ${sizing(12)}  ${sizing(12)}  ${sizing(0)}  ${sizing(0)};
+    border-radius: ${sizing(12)} ${sizing(12)} ${sizing(0)} ${sizing(0)};
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
     width: ${sizing(408)};
     height: ${sizing(305)};
@@ -223,7 +223,12 @@ const Button = styled.div`
   }
 `;
 
-export const Content = () => {
+export const Content = ({ comment, properties }) => {
+  const imgUrl01 = properties[0].image;
+  const imgUrl02 = properties[1].image;
+  const imgUrl03 = properties[2].image;
+  const imgUrl04 = properties[3].image;
+
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -247,30 +252,21 @@ export const Content = () => {
           <div className="bot-name">비버’s comment</div>
         </Profile>
         <Comment>
-          <div className="comment">
-            질문에 해주신 답변을 토대로 사용자님이 관심 가질 수 있는 매물 몇
-            개를 찾아왔어요. 만약 실제로 방문해 보고 싶은 매물이 있다면
-            '문의하기' 버튼을 클릭해보세요. 비버가 대신 문의글을 작성해드릴게요.
-            작성된 글을 검토하시고 바로 중개사무소에 문의해보세요!
-          </div>
+          <div className="comment">{comment}</div>
         </Comment>
       </Beaver>
 
       <StyledRow>
         <Product>
           <BuildingImg>
-            <img
-              className="building-image "
-              alt="Building"
-              src="image16.png"
-            />
+            <img className="building-image " alt="Building" src={imgUrl01} />
           </BuildingImg>
 
           <BuildingDetail>
             <BuildingInfo>
-              <div className="name">전세 1억 5,000만</div>
+              <div className="name">{properties[0].price}</div>
               <div className="detail">
-                <span className="text">봉전동 1522-3 3층 </span>
+                <span className="text">{properties[0].location} </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
               </div>
@@ -286,19 +282,15 @@ export const Content = () => {
 
         <Product>
           <BuildingImg>
-            <img
-              className="building-image "
-              alt="Building"
-              src="image17.png"
-            />
+            <img className="building-image " alt="Building" src={imgUrl02} />
           </BuildingImg>
 
           <BuildingDetail>
             <BuildingInfo>
-              <div className="name">전세 1억 6,000만</div>
+              <div className="name">{properties[1].price}</div>
 
               <div className="detail">
-                <span className="text">봉천동 1563-12 중간층 </span>
+                <span className="text">{properties[1].location} </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
               </div>
@@ -316,18 +308,14 @@ export const Content = () => {
       <StyledRow>
         <Product>
           <BuildingImg className="building-image">
-            <img
-              className="building-image "
-              alt="Building"
-              src="image18.png"
-            />
+            <img className="building-image " alt="Building" src={imgUrl03} />
           </BuildingImg>
 
           <BuildingDetail>
             <BuildingInfo>
-              <div className="name">전세 1억 3,000만</div>
+              <div className="name">{properties[2].price}</div>
               <div className="detail">
-                <span className="text">봉천동 단독주택 3층 </span>
+                <span className="text">{properties[2].location} </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
               </div>
@@ -342,14 +330,14 @@ export const Content = () => {
 
         <Product>
           <BuildingImg>
-            <img className="building-image" alt="Building" src="image19.png" />
+            <img className="building-image" alt="Building" src={imgUrl04} />
           </BuildingImg>
 
           <BuildingDetail>
             <BuildingInfo>
-              <div className="name">전세 1억 2,000만</div>
+              <div className="name">{properties[3].price}</div>
               <div className="detail">
-                <span className="text">봉천동 1527-8 3층 </span>
+                <span className="text">{properties[3].location} </span>
                 <span className="splitter">|</span>
                 <span className="text"> 단독주택</span>
               </div>

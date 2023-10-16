@@ -189,7 +189,7 @@ const Head = styled.img`
   height: ${sizing(24)};
 `;
 
-export const Step01 = () => {
+export const Step01 = ({ comment, loans }) => {
   return (
     <StyledStep>
       <Timeline>
@@ -220,15 +220,7 @@ export const Step01 = () => {
             </Profile>
 
             <Comment>
-              <div className="comment">
-                사용자 님의 답변을 분석한 결과, 사용자 님은 자산은 ~ 규모이고 ~
-                아래에 사용자 님이 관심가질만한 대출 상품을
-                가져왔어요.&nbsp;&nbsp;
-                <br />
-                &lt;- 여기 들어갈 내용은 금융상품 추천 질문 완성되면
-                추가하겠습니다. 전체적인 컨셉은 ‘금융상품 추천 관련 질문’ 에서
-                받았던 답변을 요약해주는 것 입니다.
-              </div>
+              <div className="comment">{comment}</div>
             </Comment>
           </Beaver>
 
@@ -236,36 +228,39 @@ export const Step01 = () => {
             <Product>
               <div className="information">
                 <div className="bank-name">KB국민은행</div>
-                <div className="product-name">퍼스트홈론</div>
+                <div className="product-name">{loans[0].name}</div>
               </div>
               <img
                 className="arrow-forward-ios"
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
+                onClick={() => window.open(loans?.[0]?.url)}
               />
             </Product>
 
             <Product>
               <div className="information">
-                <div className="bank-name">NH농협은행</div>
-                <div className="product-name">홈드림모기지론</div>
+                <div className="bank-name">KB국민은행</div>
+                <div className="product-name">{loans[1].name}</div>
               </div>
               <img
                 className="arrow-forward-ios"
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
+                onClick={() => window.open(loans?.[1]?.url)}
               />
             </Product>
 
             <Product>
               <div className="information">
-                <div className="bank-name">교보생명</div>
-                <div className="product-name">교보e아파트론</div>
+                <div className="bank-name">KB국민은행</div>
+                <div className="product-name">{loans[2].name}</div>
               </div>
               <img
                 className="arrow-forward-ios"
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
+                onClick={() => window.open(loans?.[2]?.url)}
               />
             </Product>
           </Products>

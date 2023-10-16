@@ -9,10 +9,10 @@ const StyledContentScreen = styled.div`
   align-items: center;
 `;
 
-export const ContentWrapper = () => {
+export const ContentWrapper = ({ res }) => {
   return (
     <StyledContentScreen>
-      <StepWrapper />
+      <StepWrapper res={res} />
       <Button />
     </StyledContentScreen>
   );

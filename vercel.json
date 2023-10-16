@@ -2,7 +2,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "https://api.test.com/api/$1"
+      "dest": "https://0201055967.for-seoul.synctreengine.com/api/$1"
     }
   ]
 }

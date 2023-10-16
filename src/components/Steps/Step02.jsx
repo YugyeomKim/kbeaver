@@ -177,9 +177,9 @@ const Comment = styled.div`
 const Head = styled.img`
   width: ${sizing(24)};
   height: ${sizing(24)};
-`
+`;
 
-export const Step02 = () => {
+export const Step02 = ({ comment, keyword }) => {
   return (
     <StyledStep>
       <Timeline>
@@ -206,15 +206,15 @@ export const Step02 = () => {
           <KeywordsContainer>
             <div className="keyword-wrapper">
               <div className="keyword">
-                <div className="label">~한 주택</div>
+                <div className="label">{keyword[0]}</div>
               </div>
 
               <div className="keyword">
-                <div className="label">~가 좋은 주택</div>
+                <div className="label">{keyword[1]}</div>
               </div>
 
               <div className="keyword">
-                <div className="label">~가 아닌 주택</div>
+                <div className="label">{keyword[2]}</div>
               </div>
             </div>
           </KeywordsContainer>
@@ -226,13 +226,7 @@ export const Step02 = () => {
             </Profile>
 
             <Comment>
-              <div className="comment">
-                질문에 해주신 답변을 토대로 사용자님이 관심 가질 수 있는 매물 몇
-                개를 찾아왔어요. 만약 실제로 방문해 보고 싶은 매물이 있다면
-                '문의하기' 버튼을 클릭해보세요. 비버가 대신 문의글을
-                작성해드릴게요. 작성된 글을 검토하시고 바로 중개사무소에
-                문의해보세요!
-              </div>
+              <div className="comment">{comment}</div>
             </Comment>
           </Beaver>
         </Suggestion>
