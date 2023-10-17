@@ -160,7 +160,7 @@ const InquireButton = styled(Button)`
   line-height: ${sizing(40)}; /* 153.846% */
 `;
 
-export default function InquireForm({ properties }) {
+export default function InquireForm(properties, comment) {
   return (
     <Background>
       <Container>
@@ -202,7 +202,7 @@ export default function InquireForm({ properties }) {
               </div>
             </Product>
           </Products>
-          <TextArea>{properties.comment}</TextArea>
+          <TextArea>{comment}</TextArea>
         </ContentContainer>
         <InquireButton>문의하기</InquireButton>
       </Container>

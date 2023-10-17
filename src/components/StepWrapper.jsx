@@ -17,7 +17,7 @@ export const StepWrapper = ({ res }) => {
     <StepsWrapper>
       <Step01 plan1={res.plan1} />
       <Step02 plan2={res.plan2} />
-      <Step03 plan3={res.plan3} />
+      <Step03 plan3={res.plan3} plan4={res.plan4} />
     </StepsWrapper>
   );
 };

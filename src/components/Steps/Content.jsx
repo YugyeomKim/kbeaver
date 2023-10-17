@@ -223,7 +223,7 @@ const Button = styled.div`
   }
 `;
 
-export const Content = ({ comment, properties }) => {
+export const Content = ({ comment, properties }, plan4) => {
   const imgUrl01 = properties[0].image;
   const imgUrl02 = properties[1].image;
   const imgUrl03 = properties[2].image;
@@ -365,6 +365,7 @@ export const Content = ({ comment, properties }) => {
                     show={showModal01}
                     onClose={toggleModal01}
                     properties={properties}
+                    comment={plan4.comment}
                   />
                 )}
                 <div className="inquiry-label">문의하기</div>
