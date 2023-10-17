@@ -74,7 +74,7 @@ export default function InputField({
     if (questionType === "number" && isNaN(userInput)) {
       errorFunction(result, "숫자만 입력해주세요.");
     } else if (questionType === "input-check") {
-      const fetchResult = await fetch("/region", {
+      const fetchResult = await fetch("/api/region", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

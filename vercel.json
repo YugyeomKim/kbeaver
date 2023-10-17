@@ -1,12 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/region",
-      "destination": "https://0201055967.for-seoul.synctreengine.com/region"
-    },
-    {
-      "source": "/actions",
-      "destination": "https://0201055967.for-seoul.synctreengine.com/actions"
+      "source": "/api/:path*",
+      "destination": "https://0201055967.for-seoul.synctreengine.com/:path*"
     }
   ]
 }

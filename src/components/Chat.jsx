@@ -221,10 +221,10 @@ export default function Chat({ handler }) {
 
     console.log(totalAnswer);
 
-    const fetchResult = await fetch('/actions', {
-      method: 'POST',
+    const fetchResult = await fetch("/api/actions", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(totalAnswer),
     }).catch((err) => {
