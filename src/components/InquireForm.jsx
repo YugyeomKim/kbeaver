@@ -181,7 +181,7 @@ export default function InquireForm({ idx, onClose, property, comment }) {
           </TopBar>
           <Products>
             <Product>
-              <img className="image" alt="imageForBlah" src={dummyProfile} />
+              <img className="image" alt="imageForBlah" src={property.agent_image} />
               <div className="contents">
                 <div className="information">
                   <div>{property.agent_name}</div>
