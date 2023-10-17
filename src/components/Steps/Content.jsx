@@ -229,10 +229,10 @@ export const Content = ({ comment, properties }) => {
   const imgUrl03 = properties[2].image;
   const imgUrl04 = properties[3].image;
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal01, setShowModal01] = useState(false);
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const toggleModal01 = () => {
+    setShowModal01(!showModal01);
   };
 
   return (
@@ -344,11 +344,11 @@ export const Content = ({ comment, properties }) => {
             </BuildingInfo>
 
             <Button>
-              <button className="inquiry-button" onClick={toggleModal}>
-                {showModal && (
+              <button className="inquiry-button" onClick={toggleModal01}>
+                {showModal01 && (
                   <Modal
-                    show={showModal}
-                    onClose={toggleModal}
+                    show={showModal01}
+                    onClose={toggleModal01}
                     properties={properties}
                   />
                 )}
