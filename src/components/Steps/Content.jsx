@@ -94,6 +94,9 @@ const Comment = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: ${sizing(24)}; /* 150% */
+
+    white-space: pre-line;
+    word-break: keep-all;
   }
 `;
 
@@ -185,69 +188,47 @@ const BuildingInfo = styled.div`
   }
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   display: flex;
-  padding: ${sizing(8)} ${sizing(12)};
   flex-direction: column;
-  align-items: flex-start;
-  gap: ${sizing(2)};
-  border-radius: ${sizing(8)};
-  background: var(--material-theme-key-colors-primary, #ffb261);
+  align-items: center;
 
-  & .inquiry-button {
-    all: unset;
-    align-items: flex-start;
-    background-color: var(--material-themekey-colorsprimary);
-    border-radius: ${sizing(8)};
-    box-sizing: border-box;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: ${sizing(2)};
-    padding: ${sizing(8)} ${sizing(12)};
-    position: relative;
-  }
+  width: ${sizing(80)};
+  height: ${sizing(40)};
+  padding: ${sizing(8)} ${sizing(12)};
+  border-radius: ${sizing(8)};
+  border: none;
+
+  background: #ffb261;
+
+  cursor: pointer;
 
   & .inquiry-label {
-    color: var(--material-themerefneutralneutral6);
-    font-family: var(--label-l3-m-font-family);
-    font-size: var(--label-l3-m-font-size);
-    font-style: var(--label-l3-m-font-style);
-    font-weight: var(--label-l3-m-font-weight);
-    letter-spacing: var(--label-l3-m-letter-spacing);
-    line-height: var(--label-l3-m-line-height);
-    margin-top: ${sizing(-1)};
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    color: #17130e;
+
+    /* label / l3-M */
+    font-family: Pretendard;
+    font-size: ${sizing(16)};
+    font-style: normal;
+    font-weight: 500;
+    line-height: ${sizing(24)}; /* 150% */
   }
 `;
 
-export const Content = ({ comment, properties }, plan4) => {
+export const Content = ({ plan3, plan4 }) => {
+  const { comment, properties } = plan3;
+
   const imgUrl01 = properties[0].image;
   const imgUrl02 = properties[1].image;
   const imgUrl03 = properties[2].image;
   const imgUrl04 = properties[3].image;
 
-  const [showModal01, setShowModal01] = useState(false);
-  const [showModal02, setShowModal02] = useState(false);
-  const [showModal03, setShowModal03] = useState(false);
-  const [showModal04, setShowModal04] = useState(false);
+  const [showModal, setShowModal] = useState([false, false, false, false]);
 
-  const toggleModal01 = () => {
-    setShowModal01(!showModal01);
-  };
-
-  const toggleModal02 = () => {
-    setShowModal02(!showModal02);
-  };
-
-  const toggleModal03 = () => {
-    setShowModal03(!showModal03);
-  };
-
-  const toggleModal04 = () => {
-    setShowModal04(!showModal04);
+  const toggleModal = (idx) => {
+    const newShowModal = [...showModal];
+    newShowModal[idx] = !newShowModal[idx];
+    setShowModal(newShowModal);
   };
 
   return (
@@ -287,10 +268,8 @@ export const Content = ({ comment, properties }, plan4) => {
               </div>
             </BuildingInfo>
 
-            <Button>
-              <button className="inquiry-button">
-                <div className="inquiry-label">문의하기</div>
-              </button>
+            <Button onClick={(e) => toggleModal(0)}>
+              <div className="inquiry-label">문의하기</div>
             </Button>
           </BuildingDetail>
         </Product>
@@ -311,10 +290,8 @@ export const Content = ({ comment, properties }, plan4) => {
               </div>
             </BuildingInfo>
 
-            <Button>
-              <button className="inquiry-button">
-                <div className="inquiry-label">문의하기</div>
-              </button>
+            <Button onClick={(e) => toggleModal(1)}>
+              <div className="inquiry-label">문의하기</div>
             </Button>
           </BuildingDetail>
         </Product>
@@ -335,10 +312,8 @@ export const Content = ({ comment, properties }, plan4) => {
                 <span className="text"> 단독주택</span>
               </div>
             </BuildingInfo>
-            <Button>
-              <button className="inquiry-button">
-                <div className="inquiry-label">문의하기</div>
-              </button>
+            <Button onClick={(e) => toggleModal(2)}>
+              <div className="inquiry-label">문의하기</div>
             </Button>
           </BuildingDetail>
         </Product>
@@ -358,22 +333,44 @@ export const Content = ({ comment, properties }, plan4) => {
               </div>
             </BuildingInfo>
 
-            <Button>
-              <button className="inquiry-button" onClick={toggleModal01}>
-                {showModal01 && (
-                  <Modal
-                    show={showModal01}
-                    onClose={toggleModal01}
-                    properties={properties}
-                    comment={plan4.comment}
-                  />
-                )}
-                <div className="inquiry-label">문의하기</div>
-              </button>
+            <Button onClick={(e) => toggleModal(3)}>
+              <div className="inquiry-label">문의하기</div>
             </Button>
           </BuildingDetail>
         </Product>
       </StyledRow>
+      {showModal[0] && (
+        <Modal
+          idx={0}
+          onClose={toggleModal}
+          property={properties[0]}
+          comment={plan4.ask_comment}
+        />
+      )}
+      {showModal[1] && (
+        <Modal
+          idx={1}
+          onClose={toggleModal}
+          property={properties[1]}
+          comment={plan4.ask_comment}
+        />
+      )}
+      {showModal[2] && (
+        <Modal
+          idx={2}
+          onClose={toggleModal}
+          property={properties[2]}
+          comment={plan4.ask_comment}
+        />
+      )}
+      {showModal[3] && (
+        <Modal
+          idx={3}
+          onClose={toggleModal}
+          property={properties[3]}
+          comment={plan4.ask_comment}
+        />
+      )}
     </StyledContent>
   );
 };

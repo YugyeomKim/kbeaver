@@ -124,6 +124,9 @@ const Comment = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: ${sizing(24)}; /* 150% */
+
+    white-space: pre-line;
+    word-break: keep-all;
   }
 `;
 
@@ -149,6 +152,7 @@ const Product = styled.div`
   flex: 1 0 0;
   border-radius: ${sizing(12)};
   border: ${sizing(1)} solid #ccc9c5;
+  cursor: pointer;
 
   & .information {
     display: flex;
@@ -189,7 +193,10 @@ const Head = styled.img`
   height: ${sizing(24)};
 `;
 
-export const Step01 = ({ comment, loans }) => {
+export const Step01 = ({ plan1 }) => {
+  const { loans, comment } = plan1;
+  console.log(loans, comment);
+
   return (
     <StyledStep>
       <Timeline>
@@ -225,7 +232,7 @@ export const Step01 = ({ comment, loans }) => {
           </Beaver>
 
           <Products>
-            <Product>
+            <Product onClick={() => window.open(loans?.[0]?.url)}>
               <div className="information">
                 <div className="bank-name">KB국민은행</div>
                 <div className="product-name">{loans[0].name}</div>
@@ -234,11 +241,10 @@ export const Step01 = ({ comment, loans }) => {
                 className="arrow-forward-ios"
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
-                onClick={() => window.open(loans?.[0]?.url)}
               />
             </Product>
 
-            <Product>
+            <Product onClick={() => window.open(loans?.[1]?.url)}>
               <div className="information">
                 <div className="bank-name">KB국민은행</div>
                 <div className="product-name">{loans[1].name}</div>
@@ -247,11 +253,10 @@ export const Step01 = ({ comment, loans }) => {
                 className="arrow-forward-ios"
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
-                onClick={() => window.open(loans?.[1]?.url)}
               />
             </Product>
 
-            <Product>
+            <Product onClick={() => window.open(loans?.[2]?.url)}>
               <div className="information">
                 <div className="bank-name">KB국민은행</div>
                 <div className="product-name">{loans[2].name}</div>
@@ -260,7 +265,6 @@ export const Step01 = ({ comment, loans }) => {
                 className="arrow-forward-ios"
                 alt="Arrow forward ios"
                 src="arrow_forward_ios.png"
-                onClick={() => window.open(loans?.[2]?.url)}
               />
             </Product>
           </Products>

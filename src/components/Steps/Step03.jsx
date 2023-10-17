@@ -36,7 +36,7 @@ const Head = styled.img`
   height: ${sizing(24)};
 `;
 
-export const Step03 = (plan3, plan4) => {
+export const Step03 = ({ plan3, plan4 }) => {
   return (
     <StyledStep>
       <Timeline>

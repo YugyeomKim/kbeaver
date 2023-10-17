@@ -139,12 +139,15 @@ const TextArea = styled.div`
   color: #17130e;
   /* label / l3-M */
   font-family: Pretendard;
-  font-size: ${sizing(16)};
+  font-size: ${sizing(20)};
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 150% */
+  line-height: 200%; /* 150% */
 
   overflow-y: auto;
+
+  white-space: pre-line;
+  word-break: keep-all;
 `;
 
 const InquireButton = styled(Button)`
@@ -158,16 +161,21 @@ const InquireButton = styled(Button)`
   font-style: normal;
   font-weight: 600;
   line-height: ${sizing(40)}; /* 153.846% */
+
+  cursor: pointer;
 `;
 
-export default function InquireForm(properties, comment) {
+export default function InquireForm({ idx, onClose, property, comment }) {
+  const handleCancel = () => {
+    onClose(idx)
+  }
   return (
     <Background>
       <Container>
         <ContentContainer>
           <TopBar>
             <div>부동산에 문의하기</div>
-            <CancelButton>
+            <CancelButton onClick={handleCancel}>
               <CancelIcon src={cancelIcon} />
             </CancelButton>
           </TopBar>
@@ -176,8 +184,8 @@ export default function InquireForm(properties, comment) {
               <img className="image" alt="imageForBlah" src={dummyProfile} />
               <div className="contents">
                 <div className="information">
-                  <div>{properties.agent_name}</div>
-                  <div>{properties.agent_boss}</div>
+                  <div>{property.agent_name}</div>
+                  <div>{property.agent_boss}</div>
                 </div>
                 <img
                   className="arrow-forward-ios"
@@ -188,11 +196,11 @@ export default function InquireForm(properties, comment) {
             </Product>
 
             <Product>
-              <img className="image" alt="imageBlab" src={dummyProfile} />
+              <img className="image" alt="imageBlab" src={property.image} />
               <div className="contents">
                 <div className="information">
-                  <div>{properties.price}</div>
-                  <div>{properties.location}</div>
+                  <div>{property.price}</div>
+                  <div>{property.location}</div>
                 </div>
                 <img
                   className="arrow-forward-ios"

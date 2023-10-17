@@ -171,6 +171,9 @@ const Comment = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: ${sizing(24)}; /* 150% */
+
+    white-space: pre-line;
+    word-break: keep-all;
   }
 `;
 
@@ -179,7 +182,9 @@ const Head = styled.img`
   height: ${sizing(24)};
 `;
 
-export const Step02 = ({ comment, keyword }) => {
+export const Step02 = ({ plan2 }) => {
+  const { keyword, comment } = plan2;
+
   return (
     <StyledStep>
       <Timeline>

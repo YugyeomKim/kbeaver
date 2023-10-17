@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { sizing } from "../util.js"
+import { sizing } from "../util.jsx"
+import { useNavigate } from "react-router-dom";
 
 const StyledButton = styled.button`
   display: flex;
@@ -11,6 +12,8 @@ const StyledButton = styled.button`
   border-radius:  ${sizing(12)};
   border:  ${sizing(1)} solid #ccc9c5;
   background: #ffffff;
+
+  cursor: pointer;
 
   & .label {
     color: var(--material-theme-ref-neutral-neutral-6, #17130e);
@@ -26,8 +29,14 @@ const StyledButton = styled.button`
 `;
 
 export const Button = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  }
+
   return (
-    <StyledButton>
+    <StyledButton onClick={handleClick}>
       <div className="label">임대 플랜 다시 받기</div>
     </StyledButton>
   );

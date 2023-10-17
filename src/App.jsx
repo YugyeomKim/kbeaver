@@ -26,7 +26,7 @@ const View = styled.div`
 
 function App() {
   const [resData, setResData] = useState({});
-  console.log(resData);
+
   const handleFetch = (data) => {
     setResData(data);
   };

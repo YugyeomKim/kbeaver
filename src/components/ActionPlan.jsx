@@ -17,6 +17,7 @@ const StyledPlan = styled.div`
 `;
 
 const Plan = ({ res }) => {
+  console.log(res);
   return (
     <StyledPlan>
       <TitleWrapper />

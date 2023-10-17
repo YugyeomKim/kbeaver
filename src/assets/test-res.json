@@ -1,0 +1,65 @@
+{
+  "plan1": {
+    "comment": "plan1 ChatGPT 답변 결과입니다.\n바로 여기서 줄이 바뀌었어야 합니다.\n여기서두요.",
+    "loans": [
+      {
+        "name": "금융상품1",
+        "url": "https://naver.com"
+      },
+      {
+        "name": "금융상품2",
+        "url": "https://naver.com"
+      },
+      {
+        "name": "금융상품3",
+        "url": "https://naver.com"
+      }
+    ]
+  },
+  "plan2": {
+    "comment": "plan2 ChatGPT 답변 결과입니다.\n바로 여기서 줄이 바뀌었어야 합니다.\n여기서두요."
+  },
+  "plan3": {
+    "comment": "plan3 ChatGPT 답변 결과입니다.\n바로 여기서 줄이 바뀌었어야 합니다.\n여기서두요.",
+    "properties": [
+      {
+        "image": "https://www.womansworld.com/wp-content/uploads/2024/08/cute-cats.jpg",
+        "location": "매물위치1",
+        "price": "가격1",
+        "agent_name": "공인중개사무소1",
+        "agent_boss": "사장이름1"
+      },
+      {
+        "image": "https://www.womansworld.com/wp-content/uploads/2024/08/cute-cats.jpg",
+        "location": "매물위치1",
+        "price": "가격1",
+        "agent_name": "공인중개사무소1",
+        "agent_boss": "사장이름1"
+      },
+      {
+        "image": "https://www.womansworld.com/wp-content/uploads/2024/08/cute-cats.jpg",
+        "location": "매물위치1",
+        "price": "가격1",
+        "agent_name": "공인중개사무소1",
+        "agent_boss": "사장이름1"
+      },
+      {
+        "image": "https://www.womansworld.com/wp-content/uploads/2024/08/cute-cats.jpg",
+        "location": "매물위치1",
+        "price": "가격1",
+        "agent_name": "공인중개사무소1",
+        "agent_boss": "사장이름1"
+      },
+      {
+        "image": "https://www.womansworld.com/wp-content/uploads/2024/08/cute-cats.jpg",
+        "location": "매물위치1",
+        "price": "가격1",
+        "agent_name": "공인중개사무소1",
+        "agent_boss": "사장이름1"
+      }
+    ]
+  },
+  "plan4": {
+    "comment": "plan4 ChatGPT 답변 결과입니다.\n바로 여기서 줄이 바뀌었어야 합니다.\n여기서두요."
+  }
+}

@@ -9,6 +9,8 @@ import InputField from "./InputField";
 import questions from "../assets/questions.json";
 import UserSaying from "./UserSaying";
 
+import testRes from "../assets/test-res.json";
+
 const Spinner = styled.img`
   width: ${sizing(84)};
   height: ${sizing(84)};
@@ -199,7 +201,7 @@ export default function Chat({ handler }) {
   };
 
   const handleEnding = async (e) => {
-    setLoading(true)
+    setLoading(true);
     const totalAnswersArray = answers.filter(
       (answer) => answer.name !== "error"
     );
@@ -219,7 +221,7 @@ export default function Chat({ handler }) {
 
     console.log(totalAnswer);
 
-    const fetchResult = await fetch('/action', {
+    const fetchResult = await fetch('/actions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -233,11 +235,15 @@ export default function Chat({ handler }) {
 
     console.log(`action: ${fetchResult.status}`);
 
-    const res = await fetchResult.json().catch((err) => {
+    const { result: res } = await fetchResult.json().catch((err) => {
       console.log(err);
       alert("서버에 문제가 생겼습니다. 다시 시도해주세요.");
       window.location.replace("/");
     });
+
+    console.log(res);
+
+    res.plan2.keyword = totalAnswer.housing.image_keyword;
 
     handler(res);
     navigate("/plan");
