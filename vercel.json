@@ -2,7 +2,7 @@
   "routes": [
     {
       "src": "/region",
-      "dest": "https://0201055967.for-seoul.synctreengine.com/$1"
+      "dest": "https://0201055967.for-seoul.synctreengine.com/region"
     }
   ]
 }
