@@ -223,16 +223,31 @@ const Button = styled.div`
   }
 `;
 
-export const Content = ({ comment, properties }) => {
+export const Content = ({ comment, properties }, plan4) => {
   const imgUrl01 = properties[0].image;
   const imgUrl02 = properties[1].image;
   const imgUrl03 = properties[2].image;
   const imgUrl04 = properties[3].image;
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal01, setShowModal01] = useState(false);
+  const [showModal02, setShowModal02] = useState(false);
+  const [showModal03, setShowModal03] = useState(false);
+  const [showModal04, setShowModal04] = useState(false);
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const toggleModal01 = () => {
+    setShowModal01(!showModal01);
+  };
+
+  const toggleModal02 = () => {
+    setShowModal02(!showModal02);
+  };
+
+  const toggleModal03 = () => {
+    setShowModal03(!showModal03);
+  };
+
+  const toggleModal04 = () => {
+    setShowModal04(!showModal04);
   };
 
   return (
@@ -344,8 +359,15 @@ export const Content = ({ comment, properties }) => {
             </BuildingInfo>
 
             <Button>
-              <button className="inquiry-button" onClick={toggleModal}>
-                {showModal && <Modal show={showModal} onClose={toggleModal} />}
+              <button className="inquiry-button" onClick={toggleModal01}>
+                {showModal01 && (
+                  <Modal
+                    show={showModal01}
+                    onClose={toggleModal01}
+                    properties={properties}
+                    comment={plan4.comment}
+                  />
+                )}
                 <div className="inquiry-label">문의하기</div>
               </button>
             </Button>

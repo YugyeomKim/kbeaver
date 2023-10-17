@@ -11,8 +11,8 @@ const InputForm = styled.form`
   width: ${sizing(824)};
   padding: ${sizing(20)} ${sizing(24)};
 
-  border-radius:  ${sizing(12)};
-  border:  ${sizing(1)} solid #d9d6d2;
+  border-radius: ${sizing(12)};
+  border: ${sizing(1)} solid #d9d6d2;
   background: #fff;
 `;
 
@@ -87,10 +87,10 @@ export default function InputField({
       });
 
       console.log(`region: ${fetchResult.status}`);
-      const { region_exist, result_region } = await fetchResult.json()
+      const { region_exist, result_region } = await fetchResult.json();
       // const region_exist = true;
       // const result_region = "서울특별시 강남구";
-      
+
       console.log(region_exist, result_region);
 
       result.target.innerText = result_region ? result_region : userInput;
