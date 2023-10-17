@@ -230,9 +230,24 @@ export const Content = ({ comment, properties }) => {
   const imgUrl04 = properties[3].image;
 
   const [showModal01, setShowModal01] = useState(false);
+  const [showModal02, setShowModal02] = useState(false);
+  const [showModal03, setShowModal03] = useState(false);
+  const [showModal04, setShowModal04] = useState(false);
 
   const toggleModal01 = () => {
     setShowModal01(!showModal01);
+  };
+
+  const toggleModal02 = () => {
+    setShowModal02(!showModal02);
+  };
+
+  const toggleModal03 = () => {
+    setShowModal03(!showModal03);
+  };
+
+  const toggleModal04 = () => {
+    setShowModal04(!showModal04);
   };
 
   return (
