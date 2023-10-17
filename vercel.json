@@ -3,6 +3,10 @@
     {
       "src": "/region",
       "dest": "https://0201055967.for-seoul.synctreengine.com/region"
+    },
+    {
+      "src": "/actions",
+      "dest": "https://0201055967.for-seoul.synctreengine.com/actions"
     }
   ]
 }
