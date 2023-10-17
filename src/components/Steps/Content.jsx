@@ -345,7 +345,13 @@ export const Content = ({ comment, properties }) => {
 
             <Button>
               <button className="inquiry-button" onClick={toggleModal}>
-                {showModal && <Modal show={showModal} onClose={toggleModal} />}
+                {showModal && (
+                  <Modal
+                    show={showModal}
+                    onClose={toggleModal}
+                    properties={properties}
+                  />
+                )}
                 <div className="inquiry-label">문의하기</div>
               </button>
             </Button>
